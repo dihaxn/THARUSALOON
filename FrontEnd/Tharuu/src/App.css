@@ -1,42 +1,64 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Diagnostic test style — should make this paragraph red when CSS loads */
+.diagnostic-red {
+	color: #e53e3e !important;
+	font-weight: 500 !important;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* small layout helper to verify Tailwind's container spacing later */
+.diagnostic-padding {
+	padding-top: 1.5rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Fallback styles to mimic key Tailwind utilities used by the app */
+html, body, #root {
+	height: 100%;
+}
+body {
+	margin: 0;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	background: #f9fafb; /* similar to bg-gray-50 */
+	color: #111827;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Navbar fallback */
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 50;
+	background: #ffffff;
+	border-bottom: 1px solid #e5e7eb;
+	padding: 0.75rem 1rem;
+}
+.navbar .container {
+	max-width: 1024px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.navbar .brand {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+.navbar .brand img { height: 32px; }
+.navbar a { color: #111827; text-decoration: none; }
+
+/* Page layout */
+main {
+	padding-top: 4.5rem; /* give space for fixed navbar */
 }
 
-.card {
-  padding: 2em;
+h1 {
+	font-size: 2rem; /* similar to text-4xl */
+	font-weight: 700;
+	margin: 0 0 0.75rem 0;
 }
 
-.read-the-docs {
-  color: #888;
+.lead {
+	margin-top: 1rem;
+	color: #4b5563; /* similar to text-gray-600 */
 }
+
