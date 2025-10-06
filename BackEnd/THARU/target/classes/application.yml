@@ -1,0 +1,27 @@
+server:
+  port: ${PORT:8080}
+
+spring:
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:tharu_salon}?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: ${DB_USER:tharu_user}
+    password: ${DB_PASSWORD:tharu_password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+  sql:
+    init:
+      mode: never
+
+logging:
+  level:
+    org.springframework: INFO
+    com.tharu.salon: DEBUG
+
+app:
+  cors-origins: http://localhost:5173

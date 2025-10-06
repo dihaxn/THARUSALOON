@@ -1,64 +1,39 @@
-/* Diagnostic test style — should make this paragraph red when CSS loads */
-.diagnostic-red {
-	color: #e53e3e !important;
-	font-weight: 500 !important;
+:root {
+  color-scheme: light;
 }
 
-/* small layout helper to verify Tailwind's container spacing later */
-.diagnostic-padding {
-	padding-top: 1.5rem;
+html,
+body,
+#root {
+  min-height: 100%;
 }
 
-/* Fallback styles to mimic key Tailwind utilities used by the app */
-html, body, #root {
-	height: 100%;
-}
 body {
-	margin: 0;
-	font-family: Georgia, 'Times New Roman', Times, serif;
-	background: #f9fafb; /* similar to bg-gray-50 */
-	color: #111827;
+  margin: 0;
+  font-family: "Poppins", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: #fff9f9;
+  color: #2c2c2c;
+  text-rendering: optimizeLegibility;
 }
 
-/* Navbar fallback */
-.navbar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 50;
-	background: #ffffff;
-	border-bottom: 1px solid #e5e7eb;
-	padding: 0.75rem 1rem;
-}
-.navbar .container {
-	max-width: 1024px;
-	margin: 0 auto;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-.navbar .brand {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-}
-.navbar .brand img { height: 32px; }
-.navbar a { color: #111827; text-decoration: none; }
-
-/* Page layout */
-main {
-	padding-top: 4.5rem; /* give space for fixed navbar */
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-h1 {
-	font-size: 2rem; /* similar to text-4xl */
-	font-weight: 700;
-	margin: 0 0 0.75rem 0;
+img {
+  display: block;
+  max-width: 100%;
 }
 
-.lead {
-	margin-top: 1rem;
-	color: #4b5563; /* similar to text-gray-600 */
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
 }
-

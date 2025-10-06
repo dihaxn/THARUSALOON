@@ -1,16 +1,41 @@
-# React + Vite
+# Tharu Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This React + Vite app now ships with Tailwind CSS for utility-first styling.
 
-Currently, two official plugins are available:
+## Getting started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Install dependencies:
+   ```powershell
+   npm install
+   ```
+2. Start the dev server:
+   ```powershell
+   npm run dev
+   ```
+3. Build for production:
+   ```powershell
+   npm run build
+   ```
 
-## React Compiler
+### Connect to the Spring Boot API
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The bookings dashboard now pulls live data from the Spring Boot backend. Make sure the API is running before visiting the **Bookings** page.
 
-## Expanding the ESLint configuration
+1. Copy the example environment file and update the base URL if needed:
+   ```powershell
+   Copy-Item .env.example .env
+   ```
+2. Ensure the backend is running (default: `http://localhost:8080`). See `BackEnd/spring-boot/README.md` for setup steps.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tailwind CSS usage
+
+- Tailwind is configured through `tailwind.config.cjs` with content paths covering `src/`, `components/`, and `pages/`.
+- Global Tailwind layers are imported via `src/index.css`, which is already included in `src/main.jsx`.
+- You can add on-demand utilities directly in JSX (e.g. `className="max-w-4xl mx-auto"`).
+- If you need custom themes or safelisted classes, adjust the `safelist` or `theme.extend` sections inside `tailwind.config.cjs`.
+
+## Linting
+
+```powershell
+npm run lint
+```
