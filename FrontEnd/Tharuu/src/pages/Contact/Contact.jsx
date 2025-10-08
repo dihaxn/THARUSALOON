@@ -41,8 +41,8 @@ const Contact = () => {
             <div className="space-y-6">
               <div>
                 <h2 className="text-xs uppercase tracking-[0.3em] text-pink-400">Studio</h2>
-                <p className="mt-2 font-serif text-2xl">37/1 Flower Road, Colombo 7</p>
-                <p className="text-sm text-slate-600">Opposite The Boutique Café · Parking available</p>
+                <p className="mt-2 font-serif text-2xl">47 Flower Road, Middeniya</p>
+                <p className="text-sm text-slate-600">Near Middeniya Town · Parking available</p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-3xl border border-pink-100 bg-white/90 p-6">
@@ -152,8 +152,8 @@ const Contact = () => {
 
           <div className="overflow-hidden rounded-3xl border border-pink-100 bg-white/90 shadow-lg shadow-pink-100">
             <iframe
-              title="Tharu Bridal Studio Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.780005245247!2d79.85504757604063!3d6.917699593079436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2595f8dfb5481%3A0x4c7b8b27ef9c7a5!2sFlower%20Rd%2C%20Colombo%2007!5e0!3m2!1sen!2slk!4v1707397022003!5m2!1sen!2slk"
+              title="Tharu Bridal Studio - Middeniya"
+              src="https://www.google.com/maps?q=Middeniya%2C%20Sri%20Lanka&output=embed"
               className="h-full w-full border-0"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

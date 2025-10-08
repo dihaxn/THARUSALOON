@@ -136,7 +136,7 @@
 @property --tw-shadow {
   syntax: "*";
   inherits: false;
-  initial-value: 0 0 #0000;
+  initial-value: 0 0 #65545400;
 }
 @property --tw-shadow-color {
   syntax: "*";
@@ -191,7 +191,7 @@
 @property --tw-ring-offset-color {
   syntax: "*";
   inherits: false;
-  initial-value: #fff;
+  initial-value: #e9a616;
 }
 @property --tw-ring-offset-shadow {
   syntax: "*";

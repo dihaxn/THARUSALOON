@@ -25,18 +25,3 @@ export default function App() {
     </BrowserRouter>
   );
 }
-
-  
-
-
-function Apps() {
-  return (
-    <div className="min-h-screen flex items-center justify-center">
-      <Services />
-    </div>
-  );
-}
-
-
-
-
