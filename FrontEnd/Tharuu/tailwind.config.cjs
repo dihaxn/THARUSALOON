@@ -6,7 +6,23 @@ module.exports = {
     './components/**/*.{js,jsx,ts,tsx}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        gold: {
+          50: '#fdf8e1',
+          100: '#fcf1c7',
+          200: '#fae9a3',
+          300: '#f7e07f',
+          400: '#f5d75b',
+          500: '#F2CD3C', // Main Gold
+          600: '#d9b836',
+          700: '#bf9e30',
+          800: '#a6852a',
+          900: '#8c7323',
+          950: '#735e1d',
+        }
+      }
+    },
   },
   plugins: [],
   safelist: [

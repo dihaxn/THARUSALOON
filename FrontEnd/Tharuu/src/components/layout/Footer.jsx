@@ -66,31 +66,7 @@ const Footer = () => {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 h-72 w-72 rounded-full bg-pink-200/30 blur-3xl" />
       </div>
 
-      {/* Newsletter Section */}
-      <div className="relative mx-auto max-w-5xl px-4 pb-16 text-center">
-        <h2 className="text-2xl font-serif text-slate-900">
-          Join our Bridal Inspiration Circle 💍
-        </h2>
-        <p className="mt-2 text-sm text-slate-600">
-          Be the first to receive new bridal looks, spa offers, and exclusive event invites.
-        </p>
-        <form
-          className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center"
-          onSubmit={(e) => e.preventDefault()}
-        >
-          <input
-            type="email"
-            placeholder="Enter your email address"
-            className="w-full max-w-sm rounded-full border border-pink-100 bg-white/80 px-5 py-3 text-sm text-slate-600 shadow-sm focus:border-pink-400 focus:ring-2 focus:ring-pink-100 outline-none"
-          />
-          <button
-            type="submit"
-            className="rounded-full bg-pink-500 px-8 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-white shadow-md shadow-pink-200 transition hover:bg-pink-600"
-          >
-            Subscribe
-          </button>
-        </form>
-      </div>
+
 
       {/* Footer Content */}
       <div className="relative mx-auto max-w-6xl grid gap-12 border-t border-pink-100 pt-12 px-4 sm:px-6 lg:grid-cols-4">

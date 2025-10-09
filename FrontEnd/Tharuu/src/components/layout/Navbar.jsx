@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 const primaryNavItems = [
   { label: 'Home', to: '/home' },
@@ -9,7 +10,9 @@ const primaryNavItems = [
   { label: 'Contact', to: '/contact' }
 ];
 
-const Navbar = ({ user }) => {
+const Navbar = () => {
+  const { user, logout } = useAuth();
+
   return (
     <header className="sticky top-0 z-50 border-b border-pink-100 bg-white/95 backdrop-blur">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-3 py-2 text-xs uppercase tracking-[0.25em] text-slate-600">
@@ -40,12 +43,20 @@ const Navbar = ({ user }) => {
 
         <div className="hidden items-center gap-3 lg:flex">
           {user ? (
-            <Link
-              to="/dashboard"
-              className="rounded-full border border-pink-200 px-3 py-1 text-[0.65rem] font-medium text-pink-600 transition hover:border-pink-400 hover:text-pink-700"
-            >
-              Dashboard
-            </Link>
+            <>
+              <Link
+                to="/dashboard"
+                className="rounded-full border border-pink-200 px-3 py-1 text-[0.65rem] font-medium text-pink-600 transition hover:border-pink-400 hover:text-pink-700"
+              >
+                Dashboard
+              </Link>
+              <button
+                onClick={logout}
+                className="text-[0.65rem] font-semibold text-slate-500 transition hover:text-pink-500"
+              >
+                Log Out
+              </button>
+            </>
           ) : (
             <>
               <Link

@@ -1,7 +1,7 @@
 const DEFAULT_TIMEOUT_MS = 10000;
 
 function getApiBaseUrl() {
-  const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8089';
+  const baseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
   return baseUrl.replace(/\/$/, '');
 }
 
