@@ -22,11 +22,35 @@ const BookingForm = ({ onBookingCreated, onCancel }) => {
     loadStaff();
   }, []);
 
+  const mockServices = [
+    { id: 1, name: 'Bridal', price: 200, durationMinutes: 120 },
+    { id: 2, name: 'Hair', price: 120, durationMinutes: 60 },
+    { id: 3, name: 'Nails', price: 80, durationMinutes: 45 },
+    { id: 4, name: 'Body', price: 150, durationMinutes: 90 },
+    { id: 5, name: 'Skin', price: 100, durationMinutes: 60 },
+    { id: 6, name: 'Bridal Makeup', price: 150, durationMinutes: 90 },
+    { id: 7, name: 'Hair Styling', price: 120, durationMinutes: 60 },
+    { id: 8, name: 'Makeup Trial', price: 100, durationMinutes: 60 },
+    { id: 9, name: 'Full Package', price: 350, durationMinutes: 180 }
+  ];
+
+  const mockStaff = [
+    { id: 1, name: 'Sarah Johnson' },
+    { id: 2, name: 'Emma Thompson' },
+    { id: 3, name: 'Sophie Chen' },
+    { id: 4, name: 'Jessica Lee' }
+  ];
+
   const loadServices = async () => {
     try {
       const servicesData = await getServices();
-      setServices(servicesData);
+      if (Array.isArray(servicesData) && servicesData.length > 0) {
+        setServices(servicesData);
+      } else {
+        setServices(mockServices);
+      }
     } catch (error) {
+      setServices(mockServices);
       console.error('Error loading services:', error);
     }
   };
@@ -34,8 +58,13 @@ const BookingForm = ({ onBookingCreated, onCancel }) => {
   const loadStaff = async () => {
     try {
       const staffData = await getStaff(token);
-      setStaff(staffData);
+      if (Array.isArray(staffData) && staffData.length > 0) {
+        setStaff(staffData);
+      } else {
+        setStaff(mockStaff);
+      }
     } catch (error) {
+      setStaff(mockStaff);
       console.error('Error loading staff:', error);
     }
   };
@@ -89,8 +118,28 @@ const BookingForm = ({ onBookingCreated, onCancel }) => {
   const selectedService = services.find(s => s.id === parseInt(formData.serviceId));
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+  <div className="fixed inset-0 flex items-center justify-center p-4 z-50" style={{ background: 'rgba(252, 231, 243, 0.85)' }}>
+      <div
+        className="rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto custom-scrollbar"
+        style={{
+          background: '#fff0fa', // light pink
+          scrollbarColor: '#ec4899 #fce7f3',
+          scrollbarWidth: 'thin'
+        }}
+      >
+        <style>{`
+          .custom-scrollbar::-webkit-scrollbar {
+            width: 10px;
+          }
+          .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #ec4899;
+            border-radius: 8px;
+          }
+          .custom-scrollbar::-webkit-scrollbar-track {
+            background: #fce7f3;
+            border-radius: 8px;
+          }
+        `}</style>
         <div className="p-6">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-bold text-slate-900">Book New Appointment</h2>
@@ -248,7 +297,7 @@ const BookingForm = ({ onBookingCreated, onCancel }) => {
               <button
                 type="submit"
                 disabled={loading}
-                className="px-4 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                className="px-4 py-2 bg-[#ec4899] text-white rounded-lg hover:bg-[#db2777] transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? 'Booking...' : 'Book Appointment'}
               </button>

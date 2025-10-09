@@ -60,27 +60,25 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#FFF5F8] relative overflow-hidden pt-20 pb-10">
+  <footer className="bg-slate-900 relative overflow-hidden pt-20 pb-10">
       {/* Top Gradient Background */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 h-72 w-72 rounded-full bg-pink-200/30 blur-3xl" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 h-72 w-72 rounded-full bg-pink-800/20 blur-3xl" />
       </div>
 
-
-
       {/* Footer Content */}
-      <div className="relative mx-auto max-w-6xl grid gap-12 border-t border-pink-100 pt-12 px-4 sm:px-6 lg:grid-cols-4">
+  <div className="relative mx-auto max-w-6xl grid gap-12 border-t border-pink-900 pt-12 px-4 sm:px-6 lg:grid-cols-4">
         {/* Brand */}
         <div className="text-center lg:text-left">
           <div className="flex items-center justify-center lg:justify-start gap-3">
-            <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-pink-100 font-serif text-lg font-semibold text-pink-600 shadow-sm">
+            <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-pink-700 font-serif text-lg font-semibold text-white shadow-sm">
               TS
             </span>
-            <h3 className="font-serif text-2xl text-slate-900">
+            <h3 className="font-serif text-2xl text-white">
               Tharu Bridal Studio
             </h3>
           </div>
-          <p className="mt-3 text-sm text-slate-600">
+          <p className="mt-3 text-sm text-slate-200/80">
             Creating unforgettable bridal experiences across Colombo, Kandy & Galle.
           </p>
           <div className="mt-4 flex justify-center lg:justify-start gap-3">
@@ -90,7 +88,7 @@ const Footer = () => {
                 href={item.href}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-pink-200 text-pink-500 transition hover:border-pink-400 hover:text-pink-600"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-pink-700 text-pink-300 transition hover:border-pink-400 hover:text-white"
               >
                 {item.icon}
               </a>
@@ -100,13 +98,13 @@ const Footer = () => {
 
         {/* Links */}
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">
+          <h4 className="text-sm font-semibold uppercase tracking-[0.25em] text-pink-400">
             Quick Links
           </h4>
-          <ul className="mt-5 space-y-3 text-sm text-slate-600">
+          <ul className="mt-5 space-y-3 text-sm text-slate-200/80">
             {quickLinks.map((link) => (
               <li key={link.name}>
-                <a href={link.href} className="transition hover:text-pink-500">
+                <a href={link.href} className="transition hover:text-pink-400">
                   {link.name}
                 </a>
               </li>
@@ -115,13 +113,13 @@ const Footer = () => {
         </div>
 
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">
+          <h4 className="text-sm font-semibold uppercase tracking-[0.25em] text-pink-400">
             Information
           </h4>
-          <ul className="mt-5 space-y-3 text-sm text-slate-600">
+          <ul className="mt-5 space-y-3 text-sm text-slate-200/80">
             {infoLinks.map((link) => (
               <li key={link.name}>
-                <a href={link.href} className="transition hover:text-pink-500">
+                <a href={link.href} className="transition hover:text-pink-400">
                   {link.name}
                 </a>
               </li>
@@ -131,10 +129,10 @@ const Footer = () => {
 
         {/* Contact */}
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-[0.25em] text-slate-500">
+          <h4 className="text-sm font-semibold uppercase tracking-[0.25em] text-pink-400">
             Contact Us
           </h4>
-          <div className="mt-5 space-y-2 text-sm text-slate-600">
+          <div className="mt-5 space-y-2 text-sm text-slate-200/80">
             <p>📍 47 Flower Road, Middeniya</p>
             <p>📞 +94 71 123 4567</p>
             <p>✉️ tharu@bridal.com</p>
@@ -165,7 +163,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom */}
-      <div className="mt-12 border-t border-pink-100 pt-6 text-center text-xs text-slate-500">
+  <div className="mt-12 border-t border-pink-800 pt-6 text-center text-xs text-slate-400">
         © {new Date().getFullYear()} Tharu Bridal Studio — Designed with 💖 in Sri Lanka.
       </div>
     </footer>

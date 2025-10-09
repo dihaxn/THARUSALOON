@@ -14,10 +14,10 @@ const Navbar = () => {
   const { user, logout } = useAuth();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-pink-100 bg-white/95 backdrop-blur">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-3 py-2 text-xs uppercase tracking-[0.25em] text-slate-600">
-        <Link to="/home" className="flex items-center gap-2 text-[0.65rem] font-semibold text-pink-500">
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-pink-200 text-[0.7rem]">
+    <header className="sticky top-0 z-50 border-b border-pink-900 bg-slate-900/95 backdrop-blur">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-3 py-2 text-xs uppercase tracking-[0.25em] text-white">
+        <Link to="/home" className="flex items-center gap-2 text-[0.65rem] font-semibold text-pink-400">
+          <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-pink-700 text-[0.7rem] bg-slate-900 text-white">
             TS
           </span>
           Tharu Bridal Studio
@@ -31,8 +31,8 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `transition-colors duration-200 ${
                   isActive
-                    ? 'text-pink-600'
-                    : 'text-slate-500 hover:text-pink-500'
+                    ? 'text-pink-400 font-bold'
+                    : 'text-slate-200 hover:text-pink-400'
                 }`
               }
             >
@@ -46,13 +46,13 @@ const Navbar = () => {
             <>
               <Link
                 to="/dashboard"
-                className="rounded-full border border-pink-200 px-3 py-1 text-[0.65rem] font-medium text-pink-600 transition hover:border-pink-400 hover:text-pink-700"
+                className="rounded-full border border-pink-700 px-3 py-1 text-[0.65rem] font-medium text-pink-400 transition hover:border-pink-400 hover:text-white"
               >
                 Dashboard
               </Link>
               <button
                 onClick={logout}
-                className="text-[0.65rem] font-semibold text-slate-500 transition hover:text-pink-500"
+                className="text-[0.65rem] font-semibold text-slate-200 transition hover:text-pink-400"
               >
                 Log Out
               </button>
@@ -61,13 +61,13 @@ const Navbar = () => {
             <>
               <Link
                 to="/login"
-                className="text-[0.65rem] font-semibold text-slate-500 transition hover:text-pink-500"
+                className="text-[0.65rem] font-semibold text-slate-200 transition hover:text-pink-400"
               >
                 Log in
               </Link>
               <Link
                 to="/register"
-                className="rounded-full bg-pink-500 px-4 py-1 text-[0.65rem] font-semibold text-white shadow-sm transition hover:bg-pink-600"
+                className="rounded-full bg-pink-700 px-4 py-1 text-[0.65rem] font-semibold text-white shadow-sm transition hover:bg-pink-800"
               >
                 Book a Consultation
               </Link>
@@ -77,7 +77,7 @@ const Navbar = () => {
 
         <button
           type="button"
-          className="inline-flex items-center rounded-full border border-pink-200 p-2 text-pink-500 transition hover:border-pink-400 hover:text-pink-600 lg:hidden"
+          className="inline-flex items-center rounded-full border border-pink-700 p-2 text-pink-400 transition hover:border-pink-400 hover:text-white lg:hidden"
           aria-label="Toggle navigation"
         >
           <svg

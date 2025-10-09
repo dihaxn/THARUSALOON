@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import BookingForm from '../../components/booking/BookingForm';
 import { useAuth } from '../../context/AuthContext';
 import Navbar from '../../components/layout/Navbar.jsx';
 import Footer from '../../components/layout/Footer.jsx';
@@ -6,6 +7,7 @@ import Footer from '../../components/layout/Footer.jsx';
 const CustomerDashboard = () => {
   const { user } = useAuth();
   const [activeTab, setActiveTab] = useState('overview');
+  const [showBookingModal, setShowBookingModal] = useState(false);
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedService, setSelectedService] = useState('');
   const [selectedStaff, setSelectedStaff] = useState('');
@@ -64,6 +66,15 @@ const CustomerDashboard = () => {
     { id: 3, name: 'Sophie Chen', role: 'Makeup Artist', rating: 4.9, specialties: ['Glamorous Looks', 'Airbrush'], avatar: '/api/placeholder/60/60' },
     { id: 4, name: 'Jessica Lee', role: 'Hair & Makeup', rating: 4.7, specialties: ['Complete Packages'], avatar: '/api/placeholder/60/60' }
   ];
+
+  const handleBookingCreated = () => {
+    setShowBookingModal(false);
+    // Optionally refresh appointments here
+  };
+
+  const handleBookingCancel = () => {
+    setShowBookingModal(false);
+  };
 
   const renderOverview = () => (
     <div className="space-y-6">
@@ -172,7 +183,10 @@ const CustomerDashboard = () => {
         <div className="rounded-xl bg-white p-6 shadow-lg">
           <h3 className="text-lg font-semibold text-slate-900 mb-4">Quick Actions</h3>
           <div className="space-y-3">
-            <button className="w-full rounded-lg bg-pink-500 px-4 py-3 text-white hover:bg-pink-600 transition text-left">
+            <button
+              className="w-full rounded-lg bg-pink-500 px-4 py-3 text-white hover:bg-pink-600 transition text-left"
+              onClick={() => setShowBookingModal(true)}
+            >
               <span className="font-medium">Book New Appointment</span>
               <p className="text-sm opacity-90">Schedule your next service</p>
             </button>
@@ -198,7 +212,10 @@ const CustomerDashboard = () => {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h2 className="text-2xl font-bold text-slate-900">My Appointments</h2>
-        <button className="bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition">
+        <button
+          className="bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition"
+          onClick={() => setShowBookingModal(true)}
+        >
           Book New Appointment
         </button>
       </div>
@@ -490,6 +507,12 @@ const CustomerDashboard = () => {
 
           {/* Tab Content */}
           {renderContent()}
+          {showBookingModal && (
+            <BookingForm
+              onBookingCreated={handleBookingCreated}
+              onCancel={handleBookingCancel}
+            />
+          )}
         </div>
       </main>
       <Footer />
