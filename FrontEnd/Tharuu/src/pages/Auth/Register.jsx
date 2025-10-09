@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { useAuth } from '../../context/AuthContext';
 import Navbar from '../../components/layout/Navbar.jsx';
 import Footer from '../../components/layout/Footer.jsx';
 
 const Register = () => {
-  const [successful, setSuccessful] = useState(false);
-  const [message, setMessage] = useState('');
+  const navigate = useNavigate();
+  const { register, user } = useAuth();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState(false);
 
   const initialValues = {
+    name: '',
     email: '',
     password: '',
     confirmPassword: '',
@@ -16,52 +22,96 @@ const Register = () => {
   };
 
   const validationSchema = Yup.object().shape({
-    email: Yup.string().email('This is not a valid email.').required('This field is required!'),
-    password: Yup.string().min(6, 'Password must be at least 6 characters').required('This field is required!'),
-    confirmPassword: Yup.string().oneOf([Yup.ref('password')], 'Passwords must match').required('This field is required!'),
+    name: Yup.string().min(2, 'Name must be at least 2 characters').required('Name is required'),
+    email: Yup.string().email('Invalid email address').required('Email is required'),
+    password: Yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
+    confirmPassword: Yup.string().oneOf([Yup.ref('password')], 'Passwords must match').required('Password confirmation is required'),
     acceptTerms: Yup.boolean().oneOf([true], 'You must accept the terms')
   });
 
-  const handleRegister = () => {
-    setSuccessful(false);
+  const handleRegister = async (values, { setSubmitting }) => {
+    try {
+      setLoading(true);
+      setError('');
+      setSuccess(false);
 
-    setTimeout(() => {
-      setSuccessful(true);
-      setMessage('Account created successfully (local mock)');
-    }, 600);
+      const result = await register({
+        name: values.name,
+        email: values.email,
+        password: values.password,
+        role: 'CUSTOMER' // Only customers can register
+      });
+
+      if (result.success) {
+        setSuccess(true);
+        // Redirect based on user role
+        const roleRedirects = {
+          'OWNER': '/dashboard/owner',
+          'STAFF': '/dashboard/staff',
+          'CUSTOMER': '/dashboard/customer'
+        };
+        
+        setTimeout(() => {
+          navigate(roleRedirects[result.user.role] || '/home', { replace: true });
+        }, 2000);
+      }
+    } catch (error) {
+      setError(error.message || 'Registration failed. Please try again.');
+    } finally {
+      setLoading(false);
+      setSubmitting(false);
+    }
   };
+
+  // Redirect if already logged in
+  if (user) {
+    const roleRedirects = {
+      'OWNER': '/dashboard/owner',
+      'STAFF': '/dashboard/staff',
+      'CUSTOMER': '/dashboard/customer'
+    };
+    return <Navigate to={roleRedirects[user.role] || '/home'} replace />;
+  }
 
   return (
     <div className="flex min-h-screen flex-col bg-[#FFF9F9]">
       <Navbar />
-      <main className="flex flex-1 items-center justify-center px-4 py-16">
-        <div className="grid w-full max-w-5xl gap-10 rounded-3xl bg-white/90 p-12 shadow-2xl shadow-pink-100 lg:grid-cols-2">
-          <div className="flex flex-col justify-between space-y-10">
+      <main className="flex flex-1 items-center justify-center px-4 py-8">
+        <div className="grid w-full max-w-3xl gap-6 rounded-2xl bg-white/85 p-6 shadow-xl shadow-pink-100 lg:grid-cols-[1fr,1fr]">
+          <div className="flex flex-col justify-between space-y-6">
             <div className="space-y-3">
-              <span className="inline-flex rounded-full bg-pink-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-pink-600">
+              <span className="inline-flex rounded-full bg-pink-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-pink-600">
                 Join our circle
               </span>
-              <h1 className="font-serif text-4xl font-semibold text-slate-900">
+              <h1 className="font-serif text-3xl font-semibold text-slate-900">
                 Create your Tharu Bridal profile
               </h1>
               <p className="text-sm leading-relaxed text-slate-600">
-                Build mood boards, save gown favorites, and collaborate with stylists to craft your bespoke bridal vision.
+                Create your customer account to book appointments and access our services.
               </p>
-            </div>
-            <div className="space-y-4 rounded-2xl border border-pink-100 bg-white/70 p-6 text-sm text-slate-600">
-              <p className="font-semibold text-pink-500">Member perks</p>
-              <ul className="space-y-2">
-                <li>• Personalized bridal style recommendations</li>
-                <li>• Early access to new couture collections</li>
-                <li>• Exclusive offers on pre-wedding treatments</li>
-              </ul>
             </div>
           </div>
 
-          <div className="rounded-2xl border border-pink-100 bg-white/80 p-8 shadow-xl shadow-pink-100">
+          <div className="rounded-xl border border-pink-100 bg-white/85 p-6 shadow-lg shadow-pink-100">
             <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleRegister}>
               {({ errors, touched, isSubmitting }) => (
-                <Form className="space-y-5">
+                <Form className="space-y-4">
+                  <div>
+                    <label htmlFor="name" className="mb-2 block text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                      Full Name
+                    </label>
+                    <Field
+                      type="text"
+                      name="name"
+                      id="name"
+                      className={`w-full rounded-xl border px-4 py-3 text-sm shadow-sm transition focus:border-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-100 ${
+                        errors.name && touched.name ? 'border-red-400' : 'border-slate-200'
+                      }`}
+                      placeholder="Your full name"
+                    />
+                    <ErrorMessage name="name" component="div" className="mt-2 text-xs font-medium text-red-500" />
+                  </div>
+
                   <div>
                     <label htmlFor="email" className="mb-2 block text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
                       Email address
@@ -127,27 +177,27 @@ const Register = () => {
                   </div>
                   <ErrorMessage name="acceptTerms" component="div" className="mt-1 text-xs font-medium text-red-500" />
 
+                  {error && (
+                    <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
+                      {error}
+                    </div>
+                  )}
+
+                  {success && (
+                    <div className="rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-600">
+                      Account created successfully! Redirecting to your dashboard...
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || success}
                     className="flex w-full items-center justify-center rounded-xl bg-pink-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-pink-200 transition hover:bg-pink-600 disabled:cursor-wait disabled:bg-pink-300"
                   >
                     {isSubmitting ? 'Creating your profile…' : 'Create account'}
                   </button>
 
-                  {message && (
-                    <div
-                      className={`rounded-xl border px-4 py-3 text-sm ${
-                        successful
-                          ? 'border-green-200 bg-green-50 text-green-600'
-                          : 'border-red-200 bg-red-50 text-red-600'
-                      }`}
-                    >
-                      {message}
-                    </div>
-                  )}
-
-                  <p className="text-xs text-slate-500">
+                  <p className="text-center text-xs text-slate-500">
                     Already have an account?{' '}
                     <a className="font-semibold text-pink-500 hover:text-pink-600" href="/login">
                       Log in here
