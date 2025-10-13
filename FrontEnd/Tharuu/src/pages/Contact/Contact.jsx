@@ -29,6 +29,13 @@ const Contact = () => {
       <Navbar />
       <main className="mx-auto max-w-7xl px-4 pb-24">
         <section className="mt-16 grid gap-12 lg:grid-cols-[1.2fr_1fr]">
+          <div className="mb-8">
+            <img
+              src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80"
+              alt="Modern salon interior with styling chairs and mirrors"
+              className="w-full max-h-72 object-cover rounded-xl shadow-lg"
+            />
+          </div>
           <div className="space-y-8">
             <header className="space-y-3">
               <span className="text-xs font-semibold uppercase tracking-[0.3em] text-pink-500">Contact</span>

@@ -2,6 +2,8 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../../components/layout/Navbar.jsx';
 import Footer from '../../components/layout/Footer.jsx';
+
+const bookingHeroImage = 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80';
 import { fetchBookings } from '../../lib/api.js';
 
 const FALLBACK_BOOKINGS = [
@@ -64,19 +66,14 @@ const BookingList = () => {
       setError(null);
       const response = await fetchBookings({ signal: controller.signal });
       const rows = Array.isArray(response?.data) ? response.data : [];
-      const normalised = rows.map((item, index) => {
-        const fallbackId = `booking-${index}-${Date.now()}`;
-        return {
-          id: item.reference || item.id || fallbackId,
-          reference: item.reference || item.id || '—',
-        couple: item.clientName || item.couple || 'Unnamed couple',
+      const normalised = rows.map((item, index) => ({
+        id: item.id || `booking-${index}-${Date.now()}`,
+        couple: item.couple || item.client || '—',
         service: item.service || '—',
         stylist: item.artist || item.stylist || 'To assign',
         date: item.eventDate || item.date || null,
         status: item.status || item.statusLabel || 'PENDING'
-        };
-      });
-
+      }));
       setBookings(normalised);
       setLastUpdated(new Date());
     } catch (err) {
@@ -143,6 +140,13 @@ const BookingList = () => {
   return (
     <div className="min-h-screen bg-[#FFF9F9] text-slate-800">
       <Navbar />
+      <div className="mb-8">
+        <img
+          src={bookingHeroImage}
+          alt="Modern salon interior with styling chairs and mirrors"
+          className="w-full max-h-72 object-cover rounded-xl shadow-lg"
+        />
+      </div>
       <main className="mx-auto max-w-7xl px-4 pb-24">
         <section className="mt-16 space-y-12">
           <header className="space-y-3 text-center">
@@ -152,7 +156,6 @@ const BookingList = () => {
               Track consultations, trials, and event-day glam in one glance. This view will sync with the Spring Boot booking API for live updates, artist assignments, and smart filtering.
             </p>
           </header>
-
           <div className="grid gap-4 md:grid-cols-3">
             {bookingStats.map((stat) => (
               <div
@@ -165,7 +168,6 @@ const BookingList = () => {
               </div>
             ))}
           </div>
-
           <div className="overflow-hidden rounded-3xl border border-pink-100 bg-white/90 shadow-xl shadow-pink-100">
             <table className="min-w-full text-left text-sm">
               <thead className="bg-pink-50 text-xs uppercase tracking-[0.2em] text-pink-400">

@@ -7,37 +7,37 @@ const galleryImages = [
   {
     title: 'Golden Dusk Bridal',
     description: 'Subtle glam with warm gold hues and soft waves.',
-    src: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80',
+  src: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=900&q=80',
     category: 'Bridal'
   },
   {
     title: 'Classic Kandyan Elegance',
     description: 'Traditional Kandyan draping elevated with modern highlights.',
-    src: 'https://images.unsplash.com/photo-1601134467661-3d775b999c8b?auto=format&fit=crop&w=900&q=80',
+  src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80',
     category: 'Cultural'
   },
   {
     title: 'Chic Reception Glow',
     description: 'Statement reception look with luminous skin and peach tones.',
-    src: 'https://images.unsplash.com/photo-1558222218-b7b54eede3c5?auto=format&fit=crop&w=900&q=80',
+  src: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=900&q=80',
     category: 'Reception'
   },
   {
     title: 'Minimal Mehndi Grace',
     description: 'Effortless minimalism with soft smokey eyes and nude lips.',
-    src: 'https://images.unsplash.com/photo-1615208429556-bfd580920125?auto=format&fit=crop&w=900&q=80',
+  src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=900&q=80',
     category: 'Mehndi'
   },
   {
     title: 'Garden Ceremony Bloom',
     description: 'Romantic updo with fresh florals for an outdoor ceremony.',
-    src: 'https://images.unsplash.com/photo-1602242898280-7686da83b4ae?auto=format&fit=crop&w=900&q=80',
+  src: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80',
     category: 'Outdoor'
   },
   {
     title: 'Editorial Couture',
     description: 'Bold, editorial glam for high-fashion bridal portraits.',
-    src: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=900&q=80',
+  src: 'https://images.unsplash.com/photo-1512757776216-dae2681a1480?auto=format&fit=crop&w=900&q=80',
     category: 'Editorial'
   }
 ];

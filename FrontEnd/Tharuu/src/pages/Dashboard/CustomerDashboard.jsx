@@ -36,11 +36,11 @@ const CustomerDashboard = () => {
   ]);
 
   const [favorites, setFavorites] = useState([
-    { id: 1, type: 'service', name: 'Bridal Makeup', description: 'Full bridal makeup application', price: 150, image: '/api/placeholder/200/150' },
-    { id: 2, type: 'service', name: 'Hair Styling', description: 'Complete hair styling and updo', price: 120, image: '/api/placeholder/200/150' },
-    { id: 3, type: 'look', name: 'Natural Glam', description: 'Soft, natural bridal look', price: 180, image: '/api/placeholder/200/150' },
-    { id: 4, type: 'look', name: 'Classic Elegance', description: 'Timeless bridal elegance', price: 200, image: '/api/placeholder/200/150' },
-    { id: 5, type: 'service', name: 'Full Package', description: 'Complete hair and makeup', price: 350, image: '/api/placeholder/200/150' }
+  { id: 1, type: 'service', name: 'Bridal Makeup', description: 'Full bridal makeup application', price: 150, image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80' },
+  { id: 2, type: 'service', name: 'Hair Styling', description: 'Complete hair styling and updo', price: 120, image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80' },
+  { id: 3, type: 'look', name: 'Natural Glam', description: 'Soft, natural bridal look', price: 180, image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80' },
+  { id: 4, type: 'look', name: 'Classic Elegance', description: 'Timeless bridal elegance', price: 200, image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80' },
+  { id: 5, type: 'service', name: 'Full Package', description: 'Complete hair and makeup', price: 350, image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80' }
   ]);
 
   const tabs = [
@@ -61,10 +61,10 @@ const CustomerDashboard = () => {
   ];
 
   const staff = [
-    { id: 1, name: 'Sarah Johnson', role: 'Senior Makeup Artist', rating: 4.9, specialties: ['Bridal Makeup', 'Natural Looks'], avatar: '/api/placeholder/60/60' },
-    { id: 2, name: 'Emma Thompson', role: 'Hair Stylist', rating: 4.8, specialties: ['Updos', 'Hair Color'], avatar: '/api/placeholder/60/60' },
-    { id: 3, name: 'Sophie Chen', role: 'Makeup Artist', rating: 4.9, specialties: ['Glamorous Looks', 'Airbrush'], avatar: '/api/placeholder/60/60' },
-    { id: 4, name: 'Jessica Lee', role: 'Hair & Makeup', rating: 4.7, specialties: ['Complete Packages'], avatar: '/api/placeholder/60/60' }
+  { id: 1, name: 'Sarah Johnson', role: 'Senior Makeup Artist', rating: 4.9, specialties: ['Bridal Makeup', 'Natural Looks'], avatar: 'https://images.unsplash.com/photo-1512757776216-dae2681a1480?auto=format&fit=crop&w=60&q=80' },
+  { id: 2, name: 'Emma Thompson', role: 'Hair Stylist', rating: 4.8, specialties: ['Updos', 'Hair Color'], avatar: 'https://images.unsplash.com/photo-1519014816548-bf5fe059798b?auto=format&fit=crop&w=60&q=80' },
+  { id: 3, name: 'Sophie Chen', role: 'Makeup Artist', rating: 4.9, specialties: ['Glamorous Looks', 'Airbrush'], avatar: 'https://images.unsplash.com/photo-1519014959394-6f2a9b8c9a3b?auto=format&fit=crop&w=60&q=80' },
+  { id: 4, name: 'Jessica Lee', role: 'Hair & Makeup', rating: 4.7, specialties: ['Complete Packages'], avatar: 'https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=60&q=80' }
   ];
 
   const handleBookingCreated = () => {

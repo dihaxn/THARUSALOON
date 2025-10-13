@@ -4,15 +4,19 @@ import Footer from '../../components/layout/Footer.jsx';
 
 const heroImages = [
   {
-    src: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80',
+    src: 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=1200&q=80',
+    alt: 'Traditional Sri Lankan bride in Kandyan attire'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80',
     alt: 'Bride having lipstick applied before ceremony'
   },
   {
-    src: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80&sat=-15',
+    src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80',
     alt: 'Bride in lace gown adjusting veil'
   },
   {
-    src: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1200&q=80',
+    src: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1200&q=80',
     alt: 'Bride holding bouquet and smiling'
   }
 ];
@@ -34,15 +38,15 @@ const services = [
 
 const gallery = [
   {
-    src: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80',
+    src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=900&q=80',
     label: 'The Royal Orchid Look'
   },
   {
-    src: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80',
+    src: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80',
     label: 'Classic Kandyan Elegance'
   },
   {
-    src: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80',
+    src: 'https://images.unsplash.com/photo-1512757776216-dae2681a1480?auto=format&fit=crop&w=900&q=80',
     label: 'Sunset Destination Bride'
   }
 ];

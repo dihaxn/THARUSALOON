@@ -11,7 +11,7 @@ const bridalServices = [
       'Signature Kandyan bridal look with Osariya draping, traditional jewellery setting, and detailed hair styling. Includes bridal dressing and full-day assistance for the ceremony and reception.',
     price: 'LKR 55,000',
     duration: 'Full day support',
-    image: 'https://images.unsplash.com/photo-1596464716121-2f6de6ef2e4b?auto=format&fit=crop&w=1200&q=80'
+  image: 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=1200&q=80'
   },
   {
     title: 'Western Bridal Makeup & Styling',
@@ -20,7 +20,7 @@ const bridalServices = [
       'HD or Airbrush makeup with luxury lashes, soft glam finish, and elegant updo or curls. Perfect for Western or destination weddings in Colombo, Galle, or Kandy.',
     price: 'LKR 42,000',
     duration: '3 hours',
-    image: 'https://images.unsplash.com/photo-1621361365424-06f0e3d31b1a?auto=format&fit=crop&w=1200&q=80'
+  image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80'
   },
   {
     title: 'Hindu Bridal Glam Package',
@@ -29,7 +29,7 @@ const bridalServices = [
       'Traditional Hindu wedding styling with saree draping, temple jewellery placement, and floral hair artistry. Includes assistance during the “Muhurtham” ceremony.',
     price: 'LKR 49,000',
     duration: 'Full day support',
-    image: 'https://images.unsplash.com/photo-1604537466573-45c67dc8c2d7?auto=format&fit=crop&w=1200&q=80'
+  image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1200&q=80'
   },
   {
     title: 'Muslim Bridal Elegance',
@@ -38,7 +38,7 @@ const bridalServices = [
       'Elegant bridal styling with soft matte makeup, modest hijab styling, and embellishment setup for Nikah or Walima ceremonies.',
     price: 'LKR 38,000',
     duration: '3.5 hours',
-    image: 'https://images.unsplash.com/photo-1621873496330-7e29577cdbd5?auto=format&fit=crop&w=1200&q=80'
+  image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80'
   },
   {
     title: 'Bridal Party Glam Squad',
@@ -47,7 +47,7 @@ const bridalServices = [
       'Coordinated makeup and hair for bridesmaids, mothers, and flower girls. Ensures color harmony and theme consistency for your full bridal party.',
     price: 'LKR 10,500 / person',
     duration: '1.5 hours each',
-    image: 'https://images.unsplash.com/photo-1555421689-723218a02dcc?auto=format&fit=crop&w=1200&q=80'
+  image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80'
   },
   {
     title: 'Groom’s Royal Dressing Package',
@@ -56,7 +56,7 @@ const bridalServices = [
       'Complete groom dressing with national or Western attire, skincare prep, and hair styling. Includes jewellery, belt, and sword coordination for Kandyan or modern looks.',
     price: 'LKR 17,000',
     duration: '2 hours',
-    image: 'https://images.unsplash.com/photo-1606851090471-8d9ef6b4bbf1?auto=format&fit=crop&w=1200&q=80'
+  image: 'https://images.unsplash.com/photo-1512757776216-dae2681a1480?auto=format&fit=crop&w=1200&q=80'
   },
   {
     title: 'Destination Bridal Experience',

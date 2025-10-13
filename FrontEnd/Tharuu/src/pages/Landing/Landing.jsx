@@ -13,6 +13,7 @@ const Landing = () => {
   const [error, setError] = React.useState('');
   const [success, setSuccess] = React.useState(false);
 
+  const landingHeroImage = 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80';
   const initialValues = {
     name: '',
     email: '',
