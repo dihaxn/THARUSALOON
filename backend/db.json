@@ -1,0 +1,27 @@
+{
+  "users": [
+    { "id": "admin-1", "name": "Admin User", "email": "admin@example.com", "password": "password", "role": "owner" },
+    { "id": "staff-1", "name": "Staff User", "email": "staff@example.com", "password": "password", "role": "staff" },
+    { "id": "cust-1", "name": "Jane Customer", "email": "jane@example.com", "password": "password", "role": "customer" }
+  ],
+  "services": [
+    { "id": "svc-1", "name": "Bridal Makeup", "duration": 120, "price": 150, "category": "Bridal" },
+    { "id": "svc-2", "name": "Hair Styling", "duration": 90, "price": 120, "category": "Hair" },
+    { "id": "svc-3", "name": "Manicure", "duration": 45, "price": 35, "category": "Nails" }
+  ],
+  "appointments": [],
+  "bookings": [],
+  "products": [
+    { "id": "prod-1", "name": "Foundation Kit", "sku": "FND-001", "price": 25, "cost": 15, "stock": 50, "lowStockThreshold": 10, "category": "Makeup" },
+    { "id": "prod-2", "name": "Hair Serum", "sku": "HRS-001", "price": 18, "cost": 10, "stock": 30, "lowStockThreshold": 5, "category": "Hair" }
+  ],
+  "purchaseOrders": [
+    { "id": "po-1", "supplier": "Beauty Supplies Ltd", "date": "2025-10-15", "status": "pending", "total": 500, "items": [{ "productId": "prod-1", "quantity": 20, "price": 15 }] }
+  ],
+  "salesOrders": [
+    { "id": "so-1", "customerId": "cust-1", "date": "2025-10-15", "status": "confirmed", "total": 170, "subtotal": 150, "tax": 20, "discount": 0, "items": [{ "serviceId": "svc-1", "quantity": 1, "price": 150 }, { "productId": "prod-1", "quantity": 1, "price": 20 }] }
+  ],
+  "invoices": [
+    { "id": "inv-1", "salesOrderId": "so-1", "date": "2025-10-15", "amount": 170, "status": "paid" }
+  ]
+}
