@@ -90,7 +90,7 @@ const BookingForm = ({ onBookingCreated, onCancel }) => {
         appointmentDate: formData.appointmentDate,
         appointmentTime: formData.appointmentTime,
         notes: formData.notes,
-        location: formData.location || 'Tharu Bridal Studio - Colombo 03'
+        location: formData.location || 'Tharu Bridal Studio - No. 47, Flower Road, Colombo 03'
       };
 
       await createAppointment(appointmentData, token);
@@ -238,14 +238,21 @@ const BookingForm = ({ onBookingCreated, onCancel }) => {
                 <label className="block text-sm font-medium text-slate-700 mb-2">
                   Location
                 </label>
-                <input
-                  type="text"
+                <select
                   name="location"
                   value={formData.location}
                   onChange={handleChange}
-                  placeholder="Tharu Bridal Studio - Colombo 03"
                   className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-pink-100 focus:border-pink-400"
-                />
+                >
+                  <option value="">Select a location</option>
+                  <option value="Tharu Bridal Studio - No. 47, Flower Road, Colombo 03">Tharu Bridal Studio - No. 47, Flower Road, Colombo 03</option>
+                  <option value="Kandy Lake Club - No. 12, Lake Drive, Kandy">Kandy Lake Club - No. 12, Lake Drive, Kandy</option>
+                  <option value="Galle Face Hotel - No. 2, Galle Road, Colombo 03">Galle Face Hotel - No. 2, Galle Road, Colombo 03</option>
+                  <option value="Mount Lavinia Hotel - No. 100, Hotel Road, Mount Lavinia">Mount Lavinia Hotel - No. 100, Hotel Road, Mount Lavinia</option>
+                  <option value="Cinnamon Grand - No. 77, Galle Road, Colombo 03">Cinnamon Grand - No. 77, Galle Road, Colombo 03</option>
+                  <option value="Hilton Colombo - No. 2, Sir Chittampalam Gardiner Mawatha, Colombo 02">Hilton Colombo - No. 2, Sir Chittampalam Gardiner Mawatha, Colombo 02</option>
+                  <option value="Other (Please specify in notes)">Other (Please specify in notes)</option>
+                </select>
               </div>
 
               {/* Notes */}

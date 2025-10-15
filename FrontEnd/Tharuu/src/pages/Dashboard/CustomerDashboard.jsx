@@ -22,17 +22,17 @@ const CustomerDashboard = () => {
   });
 
   const [appointments, setAppointments] = useState([
-    { id: 1, service: 'Traditional Kandyan Trial', date: '2024-03-15', time: '2:00 PM', duration: 90, staff: 'Priya Fernando', status: 'Confirmed', price: 30000, location: 'Tharu Bridal Studio - Colombo 03' },
-    { id: 2, service: 'Hair Consultation', date: '2024-03-20', time: '10:00 AM', duration: 45, staff: 'Kavitha Perera', status: 'Confirmed', price: 15000, location: 'Tharu Bridal Studio - Colombo 03' },
-    { id: 3, service: 'Full Package Trial', date: '2024-04-05', time: '11:00 AM', duration: 180, staff: 'Nethmi Silva', status: 'Pending', price: 60000, location: 'Tharu Bridal Studio - Colombo 03' },
-    { id: 4, service: 'Wedding Day Makeup', date: '2024-04-15', time: '8:00 AM', duration: 120, staff: 'Priya Fernando', status: 'Confirmed', price: 45000, location: 'Traditional Wedding Venue - Kandy' }
+    { id: 1, service: 'Traditional Kandyan Trial', date: '2024-03-15', time: '2:00 PM', duration: 90, staff: 'Priya Fernando', status: 'Confirmed', price: 30000, location: 'Tharu Bridal Studio - No. 47, Flower Road, Colombo 03' },
+    { id: 2, service: 'Hair Consultation', date: '2024-03-20', time: '10:00 AM', duration: 45, staff: 'Kavitha Perera', status: 'Confirmed', price: 15000, location: 'Tharu Bridal Studio - No. 47, Flower Road, Colombo 03' },
+    { id: 3, service: 'Full Package Trial', date: '2024-04-05', time: '11:00 AM', duration: 180, staff: 'Nethmi Silva', status: 'Pending', price: 60000, location: 'Tharu Bridal Studio - No. 47, Flower Road, Colombo 03' },
+    { id: 4, service: 'Wedding Day Makeup', date: '2024-04-15', time: '8:00 AM', duration: 120, staff: 'Priya Fernando', status: 'Confirmed', price: 45000, location: 'Kandy Lake Club - No. 12, Lake Drive, Kandy' }
   ]);
 
   const [history, setHistory] = useState([
-    { id: 1, service: 'Traditional Consultation', date: '2024-02-10', staff: 'Priya Fernando', price: 22500, rating: 5, review: 'Amazing consultation! Priya really understood my traditional vision.' },
-    { id: 2, service: 'Traditional Hair Trial', date: '2024-02-15', staff: 'Kavitha Perera', price: 36000, rating: 4, review: 'Great service, Kavitha was very professional with traditional styling.' },
-    { id: 3, service: 'Traditional Makeup Trial', date: '2024-02-20', staff: 'Priya Fernando', price: 30000, rating: 5, review: 'Perfect! Exactly what I was looking for in traditional makeup.' },
-    { id: 4, service: 'Final Traditional Consultation', date: '2024-03-01', staff: 'Priya Fernando', price: 15000, rating: 5, review: 'Final traditional details sorted perfectly.' }
+    { id: 1, service: 'Traditional Consultation', date: '2024-02-10', staff: 'Priya Fernando', price: 22500, rating: 5, review: 'Amazing consultation! Priya really understood my traditional Kandyan vision.' },
+    { id: 2, service: 'Traditional Hair Trial', date: '2024-02-15', staff: 'Kavitha Perera', price: 36000, rating: 4, review: 'Great service, Kavitha was very professional with traditional Sri Lankan styling.' },
+    { id: 3, service: 'Traditional Makeup Trial', date: '2024-02-20', staff: 'Priya Fernando', price: 30000, rating: 5, review: 'Perfect! Exactly what I was looking for in traditional Sri Lankan makeup.' },
+    { id: 4, service: 'Final Traditional Consultation', date: '2024-03-01', staff: 'Priya Fernando', price: 15000, rating: 5, review: 'Final traditional Sri Lankan details sorted perfectly.' }
   ]);
 
   const [favorites, setFavorites] = useState([

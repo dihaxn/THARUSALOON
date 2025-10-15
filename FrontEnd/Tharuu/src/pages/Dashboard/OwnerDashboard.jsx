@@ -24,11 +24,11 @@ const OwnerDashboard = () => {
   ]);
 
   const [staff, setStaff] = useState([
-    { id: 1, name: 'Priya Fernando', role: 'Senior Stylist', email: 'priya@tharubridal.lk', bookings: 12, rating: 4.9 },
-    { id: 2, name: 'Kavitha Perera', role: 'Traditional Makeup Artist', email: 'kavitha@tharubridal.lk', bookings: 8, rating: 4.8 },
-    { id: 3, name: 'Nethmi Silva', role: 'Traditional Hair Stylist', email: 'nethmi@tharubridal.lk', bookings: 15, rating: 4.9 },
-    { id: 4, name: 'Tharani Rajapakse', role: 'Cultural Consultant', email: 'tharani@tharubridal.lk', bookings: 6, rating: 4.7 },
-    { id: 5, name: 'Dilani Wickramasinghe', role: 'Assistant', email: 'dilani@tharubridal.lk', bookings: 4, rating: 4.6 }
+    { id: 1, name: 'Priya Fernando', role: 'Senior Stylist', email: 'priya@tharubridal.lk', bookings: 12, rating: 4.9, address: 'No. 23, Thimbirigasyaya Road, Colombo 05' },
+    { id: 2, name: 'Kavitha Perera', role: 'Traditional Makeup Artist', email: 'kavitha@tharubridal.lk', bookings: 8, rating: 4.8, address: 'No. 67, Havelock Road, Colombo 05' },
+    { id: 3, name: 'Nethmi Silva', role: 'Traditional Hair Stylist', email: 'nethmi@tharubridal.lk', bookings: 15, rating: 4.9, address: 'No. 12, Horton Place, Colombo 07' },
+    { id: 4, name: 'Tharani Rajapakse', role: 'Cultural Consultant', email: 'tharani@tharubridal.lk', bookings: 6, rating: 4.7, address: 'No. 45, Rosmead Place, Colombo 07' },
+    { id: 5, name: 'Dilani Wickramasinghe', role: 'Assistant', email: 'dilani@tharubridal.lk', bookings: 4, rating: 4.6, address: 'No. 89, Gregory Road, Colombo 07' }
   ]);
 
   const tabs = [

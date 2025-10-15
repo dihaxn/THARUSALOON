@@ -41,15 +41,15 @@ const Contact = () => {
               <span className="text-xs font-semibold uppercase tracking-[0.3em] text-pink-500">Contact</span>
               <h1 className="font-serif text-4xl">Let&apos;s plan your bridal story</h1>
               <p className="text-sm leading-relaxed text-slate-600">
-                Reach out to book traditional Sri Lankan bridal consultations, trial sessions, or cultural ceremony styling. We specialize in Kandyan, Hindu, and Muslim wedding traditions across Sri Lanka.
+                Reach out to book traditional Sri Lankan bridal consultations, trial sessions, or cultural ceremony styling. We specialize in Kandyan, Hindu, and Muslim wedding traditions across Sri Lanka. Located in the heart of Colombo with easy access to all major wedding venues.
               </p>
             </header>
 
             <div className="space-y-6">
               <div>
                 <h2 className="text-xs uppercase tracking-[0.3em] text-pink-400">Studio</h2>
-                <p className="mt-2 font-serif text-2xl">47 Flower Road, Colombo 03</p>
-                <p className="text-sm text-slate-600">Near Bambalapitiya · Parking available</p>
+                <p className="mt-2 font-serif text-2xl">No. 47, Flower Road, Colombo 03</p>
+                <p className="text-sm text-slate-600">Near Bambalapitiya Flats · Free parking available</p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-3xl border border-pink-100 bg-white/90 p-6">

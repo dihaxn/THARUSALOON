@@ -18,20 +18,20 @@ const StaffDashboard = () => {
   });
 
   const [appointments, setAppointments] = useState([
-    { id: 1, customer: 'Sanduni Jayasinghe', service: 'Traditional Kandyan Consultation', date: '2024-03-15', time: '10:00 AM', duration: 60, status: 'Confirmed', phone: '+94 76 345 6789', notes: 'First time bride, wants traditional Kandyan look' },
-    { id: 2, customer: 'Priyanka Silva', service: 'Hindu Bridal Trial', date: '2024-03-15', time: '2:00 PM', duration: 90, status: 'Confirmed', phone: '+94 77 456 7890', notes: 'Outdoor Hindu wedding, needs long-lasting makeup' },
-    { id: 3, customer: 'Kavitha Perera', service: 'Traditional Hair Styling', date: '2024-03-15', time: '4:00 PM', duration: 120, status: 'Pending', phone: '+94 71 567 8901', notes: 'Traditional updo with jasmine flowers' },
-    { id: 4, customer: 'Nethmi Fernando', service: 'Full Package Trial', date: '2024-03-16', time: '9:00 AM', duration: 180, status: 'Confirmed', phone: '+94 76 678 9012', notes: 'Complete traditional trial run' },
-    { id: 5, customer: 'Tharani Wickramasinghe', service: 'Hair Consultation', date: '2024-03-16', time: '1:00 PM', duration: 45, status: 'Confirmed', phone: '+94 77 789 0123', notes: 'Considering traditional hair accessories' },
-    { id: 6, customer: 'Dilani Rajapakse', service: 'Muslim Bridal Application', date: '2024-03-17', time: '11:00 AM', duration: 60, status: 'Confirmed', phone: '+94 71 890 1234', notes: 'Muslim wedding day application' }
+    { id: 1, customer: 'Sanduni Jayasinghe', service: 'Traditional Kandyan Consultation', date: '2024-03-15', time: '10:00 AM', duration: 60, status: 'Confirmed', phone: '+94 76 345 6789', notes: 'First time bride, wants traditional Kandyan look', address: 'No. 45/2, Temple Road, Kandy' },
+    { id: 2, customer: 'Priyanka Silva', service: 'Hindu Bridal Trial', date: '2024-03-15', time: '2:00 PM', duration: 90, status: 'Confirmed', phone: '+94 77 456 7890', notes: 'Outdoor Hindu wedding, needs long-lasting makeup', address: 'No. 78, High Level Road, Colombo 06' },
+    { id: 3, customer: 'Kavitha Perera', service: 'Traditional Hair Styling', date: '2024-03-15', time: '4:00 PM', duration: 120, status: 'Pending', phone: '+94 71 567 8901', notes: 'Traditional updo with jasmine flowers', address: 'No. 123, Galle Road, Colombo 03' },
+    { id: 4, customer: 'Nethmi Fernando', service: 'Full Package Trial', date: '2024-03-16', time: '9:00 AM', duration: 180, status: 'Confirmed', phone: '+94 76 678 9012', notes: 'Complete traditional trial run', address: 'No. 56, Ward Place, Colombo 07' },
+    { id: 5, customer: 'Tharani Wickramasinghe', service: 'Hair Consultation', date: '2024-03-16', time: '1:00 PM', duration: 45, status: 'Confirmed', phone: '+94 77 789 0123', notes: 'Considering traditional hair accessories', address: 'No. 89, Flower Road, Colombo 07' },
+    { id: 6, customer: 'Dilani Rajapakse', service: 'Muslim Bridal Application', date: '2024-03-17', time: '11:00 AM', duration: 60, status: 'Confirmed', phone: '+94 71 890 1234', notes: 'Muslim wedding day application', address: 'No. 34, Bambalapitiya Road, Colombo 04' }
   ]);
 
   const [customers, setCustomers] = useState([
-    { id: 1, name: 'Sanduni Jayasinghe', email: 'sanduni@tharubridal.lk', phone: '+94 76 345 6789', lastVisit: '2024-03-10', totalVisits: 3, preferences: 'Traditional Kandyan makeup, long hair' },
-    { id: 2, name: 'Priyanka Silva', email: 'priyanka@tharubridal.lk', phone: '+94 77 456 7890', lastVisit: '2024-03-08', totalVisits: 2, preferences: 'Hindu bridal look, traditional accessories' },
-    { id: 3, name: 'Kavitha Perera', email: 'kavitha@tharubridal.lk', phone: '+94 71 567 8901', lastVisit: '2024-03-12', totalVisits: 4, preferences: 'Traditional style, jasmine flowers' },
-    { id: 4, name: 'Nethmi Fernando', email: 'nethmi@tharubridal.lk', phone: '+94 76 678 9012', lastVisit: '2024-03-05', totalVisits: 1, preferences: 'Traditional colors, curly hair' },
-    { id: 5, name: 'Tharani Wickramasinghe', email: 'tharani@tharubridal.lk', phone: '+94 77 789 0123', lastVisit: '2024-03-14', totalVisits: 2, preferences: 'Minimalist traditional, straight hair' }
+    { id: 1, name: 'Sanduni Jayasinghe', email: 'sanduni@tharubridal.lk', phone: '+94 76 345 6789', lastVisit: '2024-03-10', totalVisits: 3, preferences: 'Traditional Kandyan makeup, long hair', address: 'No. 45/2, Temple Road, Kandy' },
+    { id: 2, name: 'Priyanka Silva', email: 'priyanka@tharubridal.lk', phone: '+94 77 456 7890', lastVisit: '2024-03-08', totalVisits: 2, preferences: 'Hindu bridal look, traditional accessories', address: 'No. 78, High Level Road, Colombo 06' },
+    { id: 3, name: 'Kavitha Perera', email: 'kavitha@tharubridal.lk', phone: '+94 71 567 8901', lastVisit: '2024-03-12', totalVisits: 4, preferences: 'Traditional style, jasmine flowers', address: 'No. 123, Galle Road, Colombo 03' },
+    { id: 4, name: 'Nethmi Fernando', email: 'nethmi@tharubridal.lk', phone: '+94 76 678 9012', lastVisit: '2024-03-05', totalVisits: 1, preferences: 'Traditional colors, curly hair', address: 'No. 56, Ward Place, Colombo 07' },
+    { id: 5, name: 'Tharani Wickramasinghe', email: 'tharani@tharubridal.lk', phone: '+94 77 789 0123', lastVisit: '2024-03-14', totalVisits: 2, preferences: 'Minimalist traditional, straight hair', address: 'No. 89, Flower Road, Colombo 07' }
   ]);
 
   const tabs = [

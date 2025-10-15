@@ -32,21 +32,23 @@ export const bookings = [
   {
     id: 1,
     userId: 3,
-    reference: 'REF001',
-    clientName: 'Customer User',
-    service: 'Bridal Makeup',
-    artist: 'Jane Doe',
+    reference: 'THARU001',
+    clientName: 'Sanduni Jayasinghe',
+    service: 'Traditional Kandyan Bridal Package',
+    artist: 'Priya Fernando',
     eventDate: '2024-12-25',
-    status: 'CONFIRMED'
+    status: 'CONFIRMED',
+    address: 'No. 45/2, Temple Road, Kandy'
   },
   {
     id: 2,
     userId: 3,
-    reference: 'REF002',
-    clientName: 'Customer User',
-    service: 'Party Makeup',
-    artist: 'John Doe',
+    reference: 'THARU002',
+    clientName: 'Sanduni Jayasinghe',
+    service: 'Traditional Hindu Bridal Styling',
+    artist: 'Kavitha Perera',
     eventDate: '2024-12-31',
-    status: 'PENDING'
+    status: 'PENDING',
+    address: 'No. 123, Galle Road, Colombo 03'
   }
 ];
