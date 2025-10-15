@@ -2,29 +2,29 @@
   "users": [
     {
       "id": 1,
-      "firstName": "Owner",
-      "lastName": "User",
-      "email": "owner@example.com",
+      "firstName": "Tharu",
+      "lastName": "Perera",
+      "email": "owner@tharubridal.lk",
       "password": "password",
-      "phone": "1234567890",
+      "phone": "+94 77 123 4567",
       "role": "OWNER"
     },
     {
       "id": 2,
-      "firstName": "Staff",
-      "lastName": "User",
-      "email": "staff@example.com",
+      "firstName": "Priya",
+      "lastName": "Fernando",
+      "email": "staff@tharubridal.lk",
       "password": "password",
-      "phone": "0987654321",
+      "phone": "+94 71 234 5678",
       "role": "STAFF"
     },
     {
       "id": 3,
-      "firstName": "Customer",
-      "lastName": "User",
-      "email": "customer@example.com",
+      "firstName": "Sanduni",
+      "lastName": "Jayasinghe",
+      "email": "customer@tharubridal.lk",
       "password": "password",
-      "phone": "1122334455",
+      "phone": "+94 76 345 6789",
       "role": "CUSTOMER"
     }
   ],

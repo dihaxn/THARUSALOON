@@ -24,11 +24,11 @@ const OwnerDashboard = () => {
   ]);
 
   const [staff, setStaff] = useState([
-    { id: 1, name: 'Emma Thompson', role: 'Senior Stylist', email: 'emma@tharusalon.com', bookings: 12, rating: 4.9 },
-    { id: 2, name: 'Sophie Chen', role: 'Makeup Artist', email: 'sophie@tharusalon.com', bookings: 8, rating: 4.8 },
-    { id: 3, name: 'Jessica Lee', role: 'Hair Stylist', email: 'jessica@tharusalon.com', bookings: 15, rating: 4.9 },
-    { id: 4, name: 'Rachel Green', role: 'Consultant', email: 'rachel@tharusalon.com', bookings: 6, rating: 4.7 },
-    { id: 5, name: 'Amanda White', role: 'Assistant', email: 'amanda@tharusalon.com', bookings: 4, rating: 4.6 }
+    { id: 1, name: 'Priya Fernando', role: 'Senior Stylist', email: 'priya@tharubridal.lk', bookings: 12, rating: 4.9 },
+    { id: 2, name: 'Kavitha Perera', role: 'Traditional Makeup Artist', email: 'kavitha@tharubridal.lk', bookings: 8, rating: 4.8 },
+    { id: 3, name: 'Nethmi Silva', role: 'Traditional Hair Stylist', email: 'nethmi@tharubridal.lk', bookings: 15, rating: 4.9 },
+    { id: 4, name: 'Tharani Rajapakse', role: 'Cultural Consultant', email: 'tharani@tharubridal.lk', bookings: 6, rating: 4.7 },
+    { id: 5, name: 'Dilani Wickramasinghe', role: 'Assistant', email: 'dilani@tharubridal.lk', bookings: 4, rating: 4.6 }
   ]);
 
   const tabs = [

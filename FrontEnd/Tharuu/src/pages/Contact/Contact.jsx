@@ -41,26 +41,26 @@ const Contact = () => {
               <span className="text-xs font-semibold uppercase tracking-[0.3em] text-pink-500">Contact</span>
               <h1 className="font-serif text-4xl">Let&apos;s plan your bridal story</h1>
               <p className="text-sm leading-relaxed text-slate-600">
-                Reach out to book consultations, trial sessions, or collaborative shoots. This placeholder will route submissions to the Node/Express API once the backend endpoints are ready.
+                Reach out to book traditional Sri Lankan bridal consultations, trial sessions, or cultural ceremony styling. We specialize in Kandyan, Hindu, and Muslim wedding traditions across Sri Lanka.
               </p>
             </header>
 
             <div className="space-y-6">
               <div>
                 <h2 className="text-xs uppercase tracking-[0.3em] text-pink-400">Studio</h2>
-                <p className="mt-2 font-serif text-2xl">47 Flower Road, Middeniya</p>
-                <p className="text-sm text-slate-600">Near Middeniya Town · Parking available</p>
+                <p className="mt-2 font-serif text-2xl">47 Flower Road, Colombo 03</p>
+                <p className="text-sm text-slate-600">Near Bambalapitiya · Parking available</p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-3xl border border-pink-100 bg-white/90 p-6">
                   <h3 className="text-xs uppercase tracking-[0.3em] text-pink-400">Appointments</h3>
                   <p className="mt-3 font-serif text-lg">+94 77 123 4567</p>
-                  <p className="text-sm text-slate-600">hello@tharusalon.com</p>
+                  <p className="text-sm text-slate-600">hello@tharubridal.lk</p>
                 </div>
                 <div className="rounded-3xl border border-pink-100 bg-white/90 p-6">
                   <h3 className="text-xs uppercase tracking-[0.3em] text-pink-400">Collaborations</h3>
                   <p className="mt-3 font-serif text-lg">+94 71 456 7890</p>
-                  <p className="text-sm text-slate-600">press@tharusalon.com</p>
+                  <p className="text-sm text-slate-600">info@tharubridal.lk</p>
                 </div>
               </div>
             </div>

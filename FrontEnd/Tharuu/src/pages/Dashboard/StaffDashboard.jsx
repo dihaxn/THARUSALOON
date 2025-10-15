@@ -18,20 +18,20 @@ const StaffDashboard = () => {
   });
 
   const [appointments, setAppointments] = useState([
-    { id: 1, customer: 'Sarah Johnson', service: 'Bridal Consultation', date: '2024-03-15', time: '10:00 AM', duration: 60, status: 'Confirmed', phone: '+1 (555) 123-4567', notes: 'First time bride, wants natural look' },
-    { id: 2, customer: 'Emily Davis', service: 'Makeup Trial', date: '2024-03-15', time: '2:00 PM', duration: 90, status: 'Confirmed', phone: '+1 (555) 234-5678', notes: 'Outdoor wedding, needs long-lasting makeup' },
-    { id: 3, customer: 'Lisa Wilson', service: 'Hair Styling', date: '2024-03-15', time: '4:00 PM', duration: 120, status: 'Pending', phone: '+1 (555) 345-6789', notes: 'Updo with veil' },
-    { id: 4, customer: 'Maria Garcia', service: 'Full Package Trial', date: '2024-03-16', time: '9:00 AM', duration: 180, status: 'Confirmed', phone: '+1 (555) 456-7890', notes: 'Complete trial run' },
-    { id: 5, customer: 'Jennifer Brown', service: 'Hair Consultation', date: '2024-03-16', time: '1:00 PM', duration: 45, status: 'Confirmed', phone: '+1 (555) 567-8901', notes: 'Considering color change' },
-    { id: 6, customer: 'Amanda Taylor', service: 'Makeup Application', date: '2024-03-17', time: '11:00 AM', duration: 60, status: 'Confirmed', phone: '+1 (555) 678-9012', notes: 'Wedding day application' }
+    { id: 1, customer: 'Sanduni Jayasinghe', service: 'Traditional Kandyan Consultation', date: '2024-03-15', time: '10:00 AM', duration: 60, status: 'Confirmed', phone: '+94 76 345 6789', notes: 'First time bride, wants traditional Kandyan look' },
+    { id: 2, customer: 'Priyanka Silva', service: 'Hindu Bridal Trial', date: '2024-03-15', time: '2:00 PM', duration: 90, status: 'Confirmed', phone: '+94 77 456 7890', notes: 'Outdoor Hindu wedding, needs long-lasting makeup' },
+    { id: 3, customer: 'Kavitha Perera', service: 'Traditional Hair Styling', date: '2024-03-15', time: '4:00 PM', duration: 120, status: 'Pending', phone: '+94 71 567 8901', notes: 'Traditional updo with jasmine flowers' },
+    { id: 4, customer: 'Nethmi Fernando', service: 'Full Package Trial', date: '2024-03-16', time: '9:00 AM', duration: 180, status: 'Confirmed', phone: '+94 76 678 9012', notes: 'Complete traditional trial run' },
+    { id: 5, customer: 'Tharani Wickramasinghe', service: 'Hair Consultation', date: '2024-03-16', time: '1:00 PM', duration: 45, status: 'Confirmed', phone: '+94 77 789 0123', notes: 'Considering traditional hair accessories' },
+    { id: 6, customer: 'Dilani Rajapakse', service: 'Muslim Bridal Application', date: '2024-03-17', time: '11:00 AM', duration: 60, status: 'Confirmed', phone: '+94 71 890 1234', notes: 'Muslim wedding day application' }
   ]);
 
   const [customers, setCustomers] = useState([
-    { id: 1, name: 'Sarah Johnson', email: 'sarah@example.com', phone: '+1 (555) 123-4567', lastVisit: '2024-03-10', totalVisits: 3, preferences: 'Natural makeup, long hair' },
-    { id: 2, name: 'Emily Davis', email: 'emily@example.com', phone: '+1 (555) 234-5678', lastVisit: '2024-03-08', totalVisits: 2, preferences: 'Glamorous look, short hair' },
-    { id: 3, name: 'Lisa Wilson', email: 'lisa@example.com', phone: '+1 (555) 345-6789', lastVisit: '2024-03-12', totalVisits: 4, preferences: 'Classic style, medium hair' },
-    { id: 4, name: 'Maria Garcia', email: 'maria@example.com', phone: '+1 (555) 456-7890', lastVisit: '2024-03-05', totalVisits: 1, preferences: 'Bold colors, curly hair' },
-    { id: 5, name: 'Jennifer Brown', email: 'jennifer@example.com', phone: '+1 (555) 567-8901', lastVisit: '2024-03-14', totalVisits: 2, preferences: 'Minimalist, straight hair' }
+    { id: 1, name: 'Sanduni Jayasinghe', email: 'sanduni@tharubridal.lk', phone: '+94 76 345 6789', lastVisit: '2024-03-10', totalVisits: 3, preferences: 'Traditional Kandyan makeup, long hair' },
+    { id: 2, name: 'Priyanka Silva', email: 'priyanka@tharubridal.lk', phone: '+94 77 456 7890', lastVisit: '2024-03-08', totalVisits: 2, preferences: 'Hindu bridal look, traditional accessories' },
+    { id: 3, name: 'Kavitha Perera', email: 'kavitha@tharubridal.lk', phone: '+94 71 567 8901', lastVisit: '2024-03-12', totalVisits: 4, preferences: 'Traditional style, jasmine flowers' },
+    { id: 4, name: 'Nethmi Fernando', email: 'nethmi@tharubridal.lk', phone: '+94 76 678 9012', lastVisit: '2024-03-05', totalVisits: 1, preferences: 'Traditional colors, curly hair' },
+    { id: 5, name: 'Tharani Wickramasinghe', email: 'tharani@tharubridal.lk', phone: '+94 77 789 0123', lastVisit: '2024-03-14', totalVisits: 2, preferences: 'Minimalist traditional, straight hair' }
   ]);
 
   const tabs = [
@@ -314,7 +314,7 @@ const StaffDashboard = () => {
             </div>
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-2">Email</label>
-              <input type="email" defaultValue={user?.email || 'staff@tharusalon.com'} className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-pink-100 focus:border-pink-400" />
+              <input type="email" defaultValue={user?.email || 'staff@tharubridal.lk'} className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-pink-100 focus:border-pink-400" />
             </div>
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-2">Phone</label>

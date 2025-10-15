@@ -90,7 +90,7 @@ const BookingForm = ({ onBookingCreated, onCancel }) => {
         appointmentDate: formData.appointmentDate,
         appointmentTime: formData.appointmentTime,
         notes: formData.notes,
-        location: formData.location || 'Tharu Bridal Studio'
+        location: formData.location || 'Tharu Bridal Studio - Colombo 03'
       };
 
       await createAppointment(appointmentData, token);
@@ -243,7 +243,7 @@ const BookingForm = ({ onBookingCreated, onCancel }) => {
                   name="location"
                   value={formData.location}
                   onChange={handleChange}
-                  placeholder="Tharu Bridal Studio"
+                  placeholder="Tharu Bridal Studio - Colombo 03"
                   className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-pink-100 focus:border-pink-400"
                 />
               </div>
