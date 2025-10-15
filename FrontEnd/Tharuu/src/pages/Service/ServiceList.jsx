@@ -7,39 +7,39 @@ import { getServices } from '../../lib/api.js';
 const bridalServices = [
   {
     title: 'Kandyan Bridal Dressing',
-    subtitle: 'Traditional Bridal',
+    subtitle: 'Traditional Sri Lankan Bridal',
     description:
-      'Signature Kandyan bridal look with Osariya draping, traditional jewellery setting, and detailed hair styling. Includes bridal dressing and full-day assistance for the ceremony and reception.',
-    price: 'LKR 55,000',
+      'Signature Kandyan bridal look with Osariya draping, traditional Sri Lankan jewellery setting, and detailed hair styling. Includes bridal dressing and full-day assistance for the ceremony and reception.',
+    price: 'LKR 85,000',
     duration: 'Full day support',
-  image: 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=1200&q=80'
+  image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=1200&q=80'
   },
   {
     title: 'Western Bridal Makeup & Styling',
-    subtitle: 'Makeup & Hair',
+    subtitle: 'Modern Bridal Look',
     description:
       'HD or Airbrush makeup with luxury lashes, soft glam finish, and elegant updo or curls. Perfect for Western or destination weddings in Colombo, Galle, or Kandy.',
-    price: 'LKR 42,000',
+    price: 'LKR 65,000',
     duration: '3 hours',
-  image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80'
+  image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80'
   },
   {
     title: 'Hindu Bridal Glam Package',
-    subtitle: 'Cultural Bridal',
+    subtitle: 'Traditional Hindu Bridal',
     description:
-      'Traditional Hindu wedding styling with saree draping, temple jewellery placement, and floral hair artistry. Includes assistance during the “Muhurtham” ceremony.',
-    price: 'LKR 49,000',
+      'Traditional Hindu wedding styling with saree draping, temple jewellery placement, and floral hair artistry. Includes assistance during the "Muhurtham" ceremony.',
+    price: 'LKR 75,000',
     duration: 'Full day support',
-  image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1200&q=80'
+  image: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1200&q=80'
   },
   {
     title: 'Muslim Bridal Elegance',
-    subtitle: 'Cultural Bridal',
+    subtitle: 'Traditional Muslim Bridal',
     description:
       'Elegant bridal styling with soft matte makeup, modest hijab styling, and embellishment setup for Nikah or Walima ceremonies.',
-    price: 'LKR 38,000',
+    price: 'LKR 55,000',
     duration: '3.5 hours',
-  image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80'
+  image: 'https://images.unsplash.com/photo-1594736797933-d0d3e6c8e0e8?auto=format&fit=crop&w=1200&q=80'
   },
   {
     title: 'Bridal Party Glam Squad',
@@ -61,12 +61,12 @@ const bridalServices = [
   },
   {
     title: 'Destination Bridal Experience',
-    subtitle: 'On-location',
+    subtitle: 'Sri Lankan Destination Weddings',
     description:
       'Travel-ready stylist team for destination weddings in Kandy, Nuwara Eliya, Galle, or Bentota. Includes touch-ups and full-day companionship.',
-    price: 'LKR 160,000',
+    price: 'LKR 200,000',
     duration: '2 days travel',
-    image: 'https://images.unsplash.com/photo-1602419740956-dc9fef09a1f0?auto=format&fit=crop&w=1200&q=80'
+    image: 'https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80'
   },
   {
     title: 'Luxury Pre-Bridal Rituals',

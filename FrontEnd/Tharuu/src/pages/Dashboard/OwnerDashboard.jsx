@@ -60,7 +60,7 @@ const OwnerDashboard = () => {
           <div className="flex items-center justify-between">
             <div>
               <h3 className="text-lg font-semibold text-slate-900">Revenue</h3>
-              <p className="text-3xl font-bold text-green-600">${stats.monthlyRevenue.toLocaleString()}</p>
+              <p className="text-3xl font-bold text-green-600">LKR {stats.monthlyRevenue.toLocaleString()}</p>
               <p className="text-sm text-slate-500">This month</p>
             </div>
             <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
@@ -140,7 +140,7 @@ const OwnerDashboard = () => {
                   }`}>
                     {booking.status}
                   </span>
-                  <p className="text-sm font-medium text-slate-900 mt-1">${booking.amount}</p>
+                  <p className="text-sm font-medium text-slate-900 mt-1">LKR {booking.amount.toLocaleString()}</p>
                 </div>
               </div>
             ))}
@@ -211,7 +211,7 @@ const OwnerDashboard = () => {
                       {booking.status}
                     </span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-900">${booking.amount}</td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-900">LKR {booking.amount.toLocaleString()}</td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                     <button className="text-pink-600 hover:text-pink-900 mr-3">Edit</button>
                     <button className="text-red-600 hover:text-red-900">Cancel</button>

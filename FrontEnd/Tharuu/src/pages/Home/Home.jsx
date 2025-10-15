@@ -4,16 +4,16 @@ import Footer from '../../components/layout/Footer.jsx';
 
 const heroImages = [
   {
-    src: 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=1200&q=80',
+    src: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=1200&q=80',
     alt: 'Traditional Sri Lankan bride in Kandyan attire'
   },
   {
     src: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80',
-    alt: 'Bride having lipstick applied before ceremony'
+    alt: 'Sri Lankan bride having makeup applied before ceremony'
   },
   {
-    src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80',
-    alt: 'Bride in lace gown adjusting veil'
+    src: 'https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1200&q=80',
+    alt: 'Bride in traditional saree adjusting jewelry'
   },
   {
     src: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1200&q=80',
@@ -23,31 +23,31 @@ const heroImages = [
 
 const services = [
   {
-    title: 'Couture Bridal Styling',
-    description: 'Handpicked designer gowns, bespoke veils, and custom fittings to highlight your silhouette.'
+    title: 'Traditional Sri Lankan Bridal Styling',
+    description: 'Kandyan, Hindu, and Muslim bridal styling with traditional attire, jewelry, and cultural authenticity.'
   },
   {
     title: 'Signature Makeup & Hair',
-    description: 'Flawless, camera-ready looks tailored to your bridal mood board and skin tone.'
+    description: 'Flawless, camera-ready looks tailored to Sri Lankan skin tones and traditional ceremonies.'
   },
   {
     title: 'Pre-Wedding Rituals',
-    description: 'Glow facials, spa therapies, and henna artistry curated to calm and rejuvenate.'
+    description: 'Traditional Sri Lankan spa therapies, herbal treatments, and cultural pre-wedding ceremonies.'
   }
 ];
 
 const gallery = [
   {
     src: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=900&q=80',
-    label: 'The Royal Orchid Look'
+    label: 'Traditional Kandyan Bride'
   },
   {
     src: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=900&q=80',
-    label: 'Classic Kandyan Elegance'
+    label: 'Classic Sri Lankan Elegance'
   },
   {
     src: 'https://images.unsplash.com/photo-1512757776216-dae2681a1480?auto=format&fit=crop&w=900&q=80',
-    label: 'Sunset Destination Bride'
+    label: 'Sri Lankan Destination Wedding'
   }
 ];
 
@@ -60,9 +60,9 @@ const testimonials = [
   },
   {
     quote:
-      'From trial to the final touch-up, every style was personalized to perfection. The couture fittings were seamless.',
+      'From traditional Kandyan dressing to the final touch-up, every detail honored our heritage perfectly. The cultural authenticity was flawless.',
     name: 'Minali & Ashen',
-    event: 'Colombo Ballroom Reception'
+    event: 'Traditional Kandyan Wedding - Kandy'
   }
 ];
 
@@ -76,13 +76,13 @@ const Home = () => {
           <div className="mx-auto grid max-w-screen-xl gap-12 px-6 py-16 lg:grid-cols-12 lg:items-center lg:px-12 lg:py-20">
             <div className="mr-auto space-y-6 lg:col-span-7">
               <span className="inline-flex rounded-full bg-pink-100 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-pink-600">
-                Bridal artistry reinvented
+                Sri Lankan bridal artistry
               </span>
               <h1 className="font-serif text-4xl leading-tight text-slate-900 sm:text-5xl lg:text-6xl">
-                Capturing timeless elegance for your signature love story
+                Traditional Sri Lankan bridal elegance for your special day
               </h1>
               <p className="max-w-xl text-sm leading-relaxed text-slate-600">
-                Tharu Bridal Studio curates luxury bridal styling, couture gowns, and calming spa rituals for modern brides across Sri Lanka. From dreamy destination ceremonies to grand ballroom receptions, our team designs every detail around your unique glow.
+                Tharu Bridal Studio specializes in traditional Sri Lankan bridal styling, Kandyan attire, and cultural ceremonies. From traditional Kandyan weddings to modern fusion celebrations across Colombo, Kandy, and Galle, our team honors your heritage while creating unforgettable memories.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a

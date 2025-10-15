@@ -6,19 +6,19 @@ let services = [
     id: 1,
     name: 'Bridal Makeup',
     description: 'Full bridal makeup session with trial',
-    price: 150,
+    price: 45000,
     durationMinutes: 90,
     category: 'MAKEUP',
-    imageUrl: ''
+    imageUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80'
   },
   {
     id: 2,
     name: 'Hair Styling',
     description: 'Event hair styling',
-    price: 120,
+    price: 35000,
     durationMinutes: 60,
     category: 'HAIR',
-    imageUrl: ''
+    imageUrl: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80'
   }
 ];
 

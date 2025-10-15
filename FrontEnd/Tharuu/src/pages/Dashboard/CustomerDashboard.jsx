@@ -22,25 +22,25 @@ const CustomerDashboard = () => {
   });
 
   const [appointments, setAppointments] = useState([
-    { id: 1, service: 'Bridal Makeup Trial', date: '2024-03-15', time: '2:00 PM', duration: 90, staff: 'Sarah Johnson', status: 'Confirmed', price: 100, location: 'Tharu Bridal Studio' },
-    { id: 2, service: 'Hair Consultation', date: '2024-03-20', time: '10:00 AM', duration: 45, staff: 'Emma Thompson', status: 'Confirmed', price: 50, location: 'Tharu Bridal Studio' },
-    { id: 3, service: 'Full Package Trial', date: '2024-04-05', time: '11:00 AM', duration: 180, staff: 'Sophie Chen', status: 'Pending', price: 200, location: 'Tharu Bridal Studio' },
-    { id: 4, service: 'Wedding Day Makeup', date: '2024-04-15', time: '8:00 AM', duration: 120, staff: 'Sarah Johnson', status: 'Confirmed', price: 150, location: 'Wedding Venue' }
+    { id: 1, service: 'Bridal Makeup Trial', date: '2024-03-15', time: '2:00 PM', duration: 90, staff: 'Sarah Johnson', status: 'Confirmed', price: 30000, location: 'Tharu Bridal Studio' },
+    { id: 2, service: 'Hair Consultation', date: '2024-03-20', time: '10:00 AM', duration: 45, staff: 'Emma Thompson', status: 'Confirmed', price: 15000, location: 'Tharu Bridal Studio' },
+    { id: 3, service: 'Full Package Trial', date: '2024-04-05', time: '11:00 AM', duration: 180, staff: 'Sophie Chen', status: 'Pending', price: 60000, location: 'Tharu Bridal Studio' },
+    { id: 4, service: 'Wedding Day Makeup', date: '2024-04-15', time: '8:00 AM', duration: 120, staff: 'Sarah Johnson', status: 'Confirmed', price: 45000, location: 'Wedding Venue' }
   ]);
 
   const [history, setHistory] = useState([
-    { id: 1, service: 'Bridal Consultation', date: '2024-02-10', staff: 'Emma Thompson', price: 75, rating: 5, review: 'Amazing consultation! Emma really understood my vision.' },
-    { id: 2, service: 'Hair Trial', date: '2024-02-15', staff: 'Sophie Chen', price: 120, rating: 4, review: 'Great service, Sophie was very professional.' },
-    { id: 3, service: 'Makeup Trial', date: '2024-02-20', staff: 'Sarah Johnson', price: 100, rating: 5, review: 'Perfect! Exactly what I was looking for.' },
-    { id: 4, service: 'Final Consultation', date: '2024-03-01', staff: 'Emma Thompson', price: 50, rating: 5, review: 'Final details sorted perfectly.' }
+    { id: 1, service: 'Bridal Consultation', date: '2024-02-10', staff: 'Emma Thompson', price: 22500, rating: 5, review: 'Amazing consultation! Emma really understood my vision.' },
+    { id: 2, service: 'Hair Trial', date: '2024-02-15', staff: 'Sophie Chen', price: 36000, rating: 4, review: 'Great service, Sophie was very professional.' },
+    { id: 3, service: 'Makeup Trial', date: '2024-02-20', staff: 'Sarah Johnson', price: 30000, rating: 5, review: 'Perfect! Exactly what I was looking for.' },
+    { id: 4, service: 'Final Consultation', date: '2024-03-01', staff: 'Emma Thompson', price: 15000, rating: 5, review: 'Final details sorted perfectly.' }
   ]);
 
   const [favorites, setFavorites] = useState([
-  { id: 1, type: 'service', name: 'Bridal Makeup', description: 'Full bridal makeup application', price: 150, image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80' },
-  { id: 2, type: 'service', name: 'Hair Styling', description: 'Complete hair styling and updo', price: 120, image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80' },
-  { id: 3, type: 'look', name: 'Natural Glam', description: 'Soft, natural bridal look', price: 180, image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80' },
-  { id: 4, type: 'look', name: 'Classic Elegance', description: 'Timeless bridal elegance', price: 200, image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80' },
-  { id: 5, type: 'service', name: 'Full Package', description: 'Complete hair and makeup', price: 350, image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80' }
+  { id: 1, type: 'service', name: 'Bridal Makeup', description: 'Full bridal makeup application', price: 45000, image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80' },
+  { id: 2, type: 'service', name: 'Hair Styling', description: 'Complete hair styling and updo', price: 35000, image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80' },
+  { id: 3, type: 'look', name: 'Natural Glam', description: 'Soft, natural bridal look', price: 54000, image: 'https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80' },
+  { id: 4, type: 'look', name: 'Classic Elegance', description: 'Timeless bridal elegance', price: 60000, image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80' },
+  { id: 5, type: 'service', name: 'Full Package', description: 'Complete hair and makeup', price: 105000, image: 'https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80' }
   ]);
 
   const tabs = [
@@ -52,12 +52,12 @@ const CustomerDashboard = () => {
   ];
 
   const services = [
-    { id: 1, name: 'Bridal Makeup', duration: 60, price: 150, description: 'Full bridal makeup application', category: 'Makeup' },
-    { id: 2, name: 'Hair Styling', duration: 90, price: 120, description: 'Complete hair styling and updo', category: 'Hair' },
-    { id: 3, name: 'Makeup Trial', duration: 90, price: 100, description: 'Trial run for bridal makeup', category: 'Makeup' },
-    { id: 4, name: 'Hair Consultation', duration: 30, price: 50, description: 'Hair styling consultation', category: 'Hair' },
-    { id: 5, name: 'Full Package', duration: 180, price: 350, description: 'Complete hair and makeup package', category: 'Package' },
-    { id: 6, name: 'Touch-ups', duration: 30, price: 75, description: 'Quick touch-ups and fixes', category: 'Makeup' }
+    { id: 1, name: 'Bridal Makeup', duration: 60, price: 45000, description: 'Full bridal makeup application', category: 'Makeup' },
+    { id: 2, name: 'Hair Styling', duration: 90, price: 35000, description: 'Complete hair styling and updo', category: 'Hair' },
+    { id: 3, name: 'Makeup Trial', duration: 90, price: 30000, description: 'Trial run for bridal makeup', category: 'Makeup' },
+    { id: 4, name: 'Hair Consultation', duration: 30, price: 15000, description: 'Hair styling consultation', category: 'Hair' },
+    { id: 5, name: 'Full Package', duration: 180, price: 105000, description: 'Complete hair and makeup package', category: 'Package' },
+    { id: 6, name: 'Touch-ups', duration: 30, price: 22500, description: 'Quick touch-ups and fixes', category: 'Makeup' }
   ];
 
   const staff = [
@@ -109,7 +109,7 @@ const CustomerDashboard = () => {
           <div className="flex items-center justify-between">
             <div>
               <h3 className="text-lg font-semibold text-slate-900">Total Spent</h3>
-              <p className="text-3xl font-bold text-blue-600">${stats.totalSpent}</p>
+              <p className="text-3xl font-bold text-blue-600">LKR {stats.totalSpent.toLocaleString()}</p>
               <p className="text-sm text-slate-500">Lifetime</p>
             </div>
             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
@@ -170,7 +170,7 @@ const CustomerDashboard = () => {
                   <p className="text-sm text-slate-500">with {appointment.staff}</p>
                 </div>
                 <div className="text-right">
-                  <span className="text-sm font-medium text-slate-900">${appointment.price}</span>
+                  <span className="text-sm font-medium text-slate-900">LKR {appointment.price.toLocaleString()}</span>
                   <div className="mt-1">
                     <button className="text-pink-600 hover:text-pink-800 text-xs">Reschedule</button>
                   </div>
@@ -239,7 +239,7 @@ const CustomerDashboard = () => {
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div>
                       <div className="text-sm font-medium text-slate-900">{appointment.service}</div>
-                      <div className="text-sm text-slate-500">{appointment.duration} min - ${appointment.price}</div>
+                      <div className="text-sm text-slate-500">{appointment.duration} min - LKR {appointment.price.toLocaleString()}</div>
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
@@ -306,7 +306,7 @@ const CustomerDashboard = () => {
                     <span className="font-medium">Staff:</span> {service.staff}
                   </div>
                   <div>
-                    <span className="font-medium">Price:</span> ${service.price}
+                    <span className="font-medium">Price:</span> LKR {service.price.toLocaleString()}
                   </div>
                   <div>
                     <span className="font-medium">Rating:</span> 
@@ -364,7 +364,7 @@ const CustomerDashboard = () => {
               </div>
               <p className="text-sm text-slate-600 mb-3">{item.description}</p>
               <div className="flex justify-between items-center">
-                <span className="font-semibold text-pink-600">${item.price}</span>
+                <span className="font-semibold text-pink-600">LKR {item.price.toLocaleString()}</span>
                 <div className="flex gap-2">
                   <button className="text-pink-600 hover:text-pink-800 text-sm font-medium">Book Now</button>
                   <button className="text-slate-600 hover:text-slate-800 text-sm">Remove</button>
@@ -434,7 +434,7 @@ const CustomerDashboard = () => {
             </div>
             <div className="flex justify-between items-center">
               <span className="text-slate-600">Total Spent</span>
-              <span className="font-semibold text-blue-600">${stats.totalSpent}</span>
+              <span className="font-semibold text-blue-600">LKR {stats.totalSpent.toLocaleString()}</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-slate-600">Reviews Written</span>

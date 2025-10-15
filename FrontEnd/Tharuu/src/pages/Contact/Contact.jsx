@@ -10,16 +10,16 @@ const studioTimings = [
 
 const faqs = [
   {
-    question: 'How far in advance should I book bridal services?',
-    answer: 'Peak season bookings open 12 months ahead. Weekday and off-season events can usually be accommodated within 8 weeks.'
+    question: 'How far in advance should I book traditional Sri Lankan bridal services?',
+    answer: 'Peak wedding season (November-March) bookings open 12 months ahead. Traditional ceremonies can usually be accommodated within 8 weeks.'
   },
   {
-    question: 'Do you travel outside Colombo?',
-    answer: 'Yes. We support destination weddings across Sri Lanka and overseas. Travel & accommodation charges are factored into your proposal.'
+    question: 'Do you provide services for traditional Kandyan, Hindu, and Muslim weddings?',
+    answer: 'Yes. We specialize in all traditional Sri Lankan wedding ceremonies including Kandyan, Hindu, and Muslim traditions. We travel across Sri Lanka for destination weddings.'
   },
   {
-    question: 'Can we schedule trial sessions for the bridal party?',
-    answer: 'Absolutely. Trials are hosted at our studio and can include hairstyling, draping, and skincare consultations for the entire party.'
+    question: 'Can we schedule traditional attire trials and cultural consultations?',
+    answer: 'Absolutely. We offer traditional attire trials, cultural ceremony consultations, and heritage-specific styling sessions for the entire bridal party.'
   }
 ];
 

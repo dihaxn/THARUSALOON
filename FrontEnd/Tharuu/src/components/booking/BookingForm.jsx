@@ -23,15 +23,15 @@ const BookingForm = ({ onBookingCreated, onCancel }) => {
   }, []);
 
   const mockServices = [
-    { id: 1, name: 'Bridal', price: 200, durationMinutes: 120 },
-    { id: 2, name: 'Hair', price: 120, durationMinutes: 60 },
-    { id: 3, name: 'Nails', price: 80, durationMinutes: 45 },
-    { id: 4, name: 'Body', price: 150, durationMinutes: 90 },
-    { id: 5, name: 'Skin', price: 100, durationMinutes: 60 },
-    { id: 6, name: 'Bridal Makeup', price: 150, durationMinutes: 90 },
-    { id: 7, name: 'Hair Styling', price: 120, durationMinutes: 60 },
-    { id: 8, name: 'Makeup Trial', price: 100, durationMinutes: 60 },
-    { id: 9, name: 'Full Package', price: 350, durationMinutes: 180 }
+    { id: 1, name: 'Bridal Package', price: 60000, durationMinutes: 120 },
+    { id: 2, name: 'Hair Styling', price: 35000, durationMinutes: 60 },
+    { id: 3, name: 'Manicure & Pedicure', price: 8000, durationMinutes: 45 },
+    { id: 4, name: 'Body Treatment', price: 45000, durationMinutes: 90 },
+    { id: 5, name: 'Facial Treatment', price: 30000, durationMinutes: 60 },
+    { id: 6, name: 'Bridal Makeup', price: 45000, durationMinutes: 90 },
+    { id: 7, name: 'Hair Styling', price: 35000, durationMinutes: 60 },
+    { id: 8, name: 'Makeup Trial', price: 30000, durationMinutes: 60 },
+    { id: 9, name: 'Full Package', price: 105000, durationMinutes: 180 }
   ];
 
   const mockStaff = [
@@ -176,7 +176,7 @@ const BookingForm = ({ onBookingCreated, onCancel }) => {
                   <option value="">Select a service</option>
                   {services.map(service => (
                     <option key={service.id} value={service.id}>
-                      {service.name} - ${service.price} ({service.durationMinutes} min)
+                      {service.name} - LKR {service.price.toLocaleString()} ({service.durationMinutes} min)
                     </option>
                   ))}
                 </select>
@@ -275,7 +275,7 @@ const BookingForm = ({ onBookingCreated, onCancel }) => {
                   </div>
                   <div>
                     <span className="font-medium text-slate-600">Price:</span>
-                    <span className="ml-2 text-slate-900">${selectedService.price}</span>
+                    <span className="ml-2 text-slate-900">LKR {selectedService.price.toLocaleString()}</span>
                   </div>
                   <div className="col-span-2">
                     <span className="font-medium text-slate-600">Description:</span>

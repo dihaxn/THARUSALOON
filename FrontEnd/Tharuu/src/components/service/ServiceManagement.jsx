@@ -212,7 +212,7 @@ const ServiceManagement = () => {
               </div>
               <div>
                 <span className="font-medium text-slate-500">Price:</span>
-                <span className="ml-1 text-slate-900 font-semibold">${service.price}</span>
+                <span className="ml-1 text-slate-900 font-semibold">LKR {service.price.toLocaleString()}</span>
               </div>
             </div>
 
@@ -303,7 +303,7 @@ const ServiceManagement = () => {
 
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-2">
-                      Price ($) *
+                      Price (LKR) *
                     </label>
                     <input
                       type="number"
@@ -314,7 +314,7 @@ const ServiceManagement = () => {
                       min="0"
                       step="0.01"
                       className="w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-pink-100 focus:border-pink-400"
-                      placeholder="150.00"
+                      placeholder="45000"
                     />
                   </div>
 

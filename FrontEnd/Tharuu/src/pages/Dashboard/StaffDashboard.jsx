@@ -276,19 +276,19 @@ const StaffDashboard = () => {
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {[
-          { name: 'Bridal Makeup', duration: 60, price: 150, description: 'Full bridal makeup application' },
-          { name: 'Hair Styling', duration: 90, price: 120, description: 'Complete hair styling and updo' },
-          { name: 'Makeup Trial', duration: 90, price: 100, description: 'Trial run for bridal makeup' },
-          { name: 'Hair Consultation', duration: 30, price: 50, description: 'Hair styling consultation' },
-          { name: 'Full Package', duration: 180, price: 350, description: 'Complete hair and makeup package' },
-          { name: 'Touch-ups', duration: 30, price: 75, description: 'Quick touch-ups and fixes' }
+          { name: 'Bridal Makeup', duration: 60, price: 45000, description: 'Full bridal makeup application' },
+          { name: 'Hair Styling', duration: 90, price: 35000, description: 'Complete hair styling and updo' },
+          { name: 'Makeup Trial', duration: 90, price: 30000, description: 'Trial run for bridal makeup' },
+          { name: 'Hair Consultation', duration: 30, price: 15000, description: 'Hair styling consultation' },
+          { name: 'Full Package', duration: 180, price: 105000, description: 'Complete hair and makeup package' },
+          { name: 'Touch-ups', duration: 30, price: 22500, description: 'Quick touch-ups and fixes' }
         ].map((service, index) => (
           <div key={index} className="bg-white rounded-xl shadow-lg p-6 border border-slate-100">
             <h3 className="font-semibold text-slate-900 mb-2">{service.name}</h3>
             <p className="text-sm text-slate-600 mb-3">{service.description}</p>
             <div className="flex justify-between items-center mb-3">
               <span className="text-sm text-slate-500">Duration: {service.duration} min</span>
-              <span className="font-semibold text-pink-600">${service.price}</span>
+              <span className="font-semibold text-pink-600">LKR {service.price.toLocaleString()}</span>
             </div>
             <div className="flex gap-2">
               <button className="text-pink-600 hover:text-pink-800 text-sm font-medium">Edit</button>
