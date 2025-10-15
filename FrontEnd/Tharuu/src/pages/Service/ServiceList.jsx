@@ -1,7 +1,8 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Navbar from '../../components/layout/Navbar.jsx';
 import Footer from '../../components/layout/Footer.jsx';
 import ServiceCard from '../../components/common/ServiceCard.jsx';
+import { getServices } from '../../lib/api.js';
 
 const bridalServices = [
   {
@@ -325,6 +326,25 @@ const kidsServices = [
 const ServiceList = () => {
   // Show nothing initially; reveal services only after category selection
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [apiServices, setApiServices] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    setLoading(true);
+    setError(null);
+    getServices({ signal: controller.signal })
+      .then((data) => {
+        const rows = Array.isArray(data) ? data : Array.isArray(data?.data) ? data.data : [];
+        setApiServices(rows);
+      })
+      .catch((err) => {
+        if (err.name !== 'AbortError') setError(err);
+      })
+      .finally(() => setLoading(false));
+    return () => controller.abort();
+  }, []);
 
   // Only these categories are available as filters
   const categories = useMemo(
@@ -348,8 +368,20 @@ const ServiceList = () => {
 
   const currentServices = useMemo(() => {
     if (!selectedCategory) return [];
+    // Prefer API services if they include a category; otherwise fallback to static
+    const normalizedApi = apiServices
+      .filter((s) => (s.category || s.serviceCategory || '').toString().toLowerCase() === selectedCategory.toLowerCase())
+      .map((s) => ({
+        title: s.name || s.title || 'Service',
+        subtitle: s.category || s.serviceCategory || selectedCategory,
+        description: s.description || '—',
+        price: s.price ? `LKR ${Number(s.price).toLocaleString()}` : undefined,
+        duration: s.duration || undefined,
+        image: s.imageUrl || s.image || undefined
+      }));
+    if (normalizedApi.length > 0) return normalizedApi;
     return servicesByCategory[selectedCategory] ?? [];
-  }, [selectedCategory, servicesByCategory]);
+  }, [selectedCategory, servicesByCategory, apiServices]);
 
   return (
     <div className="min-h-screen bg-[#FFF9F9] text-slate-800">
@@ -406,7 +438,11 @@ const ServiceList = () => {
 
           {selectedCategory && (
             <div className="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-              {currentServices.length === 0 ? (
+              {loading ? (
+                <div className="rounded-3xl border border-dashed border-pink-200 bg-white/70 p-12 text-center text-slate-500 md:col-span-2 xl:col-span-3">
+                  <p className="text-lg font-semibold text-slate-600">Loading services…</p>
+                </div>
+              ) : currentServices.length === 0 ? (
                 <div className="rounded-3xl border border-dashed border-pink-200 bg-white/70 p-12 text-center text-slate-500 md:col-span-2 xl:col-span-3">
                   <p className="text-lg font-semibold text-slate-600">No services available in this category yet.</p>
                 </div>

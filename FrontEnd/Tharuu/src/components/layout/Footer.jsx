@@ -1,17 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const quickLinks = [
-    { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Bridal Packages", href: "/packages" },
-    { name: "Gallery", href: "/gallery" },
+    { name: "About", to: "/about" },
+    { name: "Services", to: "/services" },
+    { name: "Bridal Packages", to: "/packages" },
+    { name: "Gallery", to: "/gallery" },
   ];
 
   const infoLinks = [
-    { name: "FAQs", href: "/faqs" },
-    { name: "Privacy Policy", href: "/privacy" },
-    { name: "Terms & Conditions", href: "/terms" },
+    { name: "FAQs", to: "/faqs" },
+    { name: "Privacy Policy", to: "/privacy" },
+    { name: "Terms & Conditions", to: "/terms" },
   ];
 
   const socialLinks = [
@@ -60,14 +61,14 @@ const Footer = () => {
   ];
 
   return (
-  <footer className="bg-slate-900 relative overflow-hidden pt-20 pb-10">
+  <footer className="bg-slate-900 relative overflow-hidden pt-20 pb-10 border-t border-pink-900/70">
       {/* Top Gradient Background */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 h-72 w-72 rounded-full bg-pink-800/20 blur-3xl" />
       </div>
 
       {/* Footer Content */}
-  <div className="relative mx-auto max-w-6xl grid gap-12 border-t border-pink-900 pt-12 px-4 sm:px-6 lg:grid-cols-4">
+  <div className="relative mx-auto max-w-7xl grid gap-12 pt-12 px-4 sm:px-6 lg:grid-cols-4">
         {/* Brand */}
         <div className="text-center lg:text-left">
           <div className="flex items-center justify-center lg:justify-start gap-3">
@@ -88,6 +89,7 @@ const Footer = () => {
                 href={item.href}
                 target="_blank"
                 rel="noreferrer"
+                aria-label={item.label}
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-pink-700 text-pink-300 transition hover:border-pink-400 hover:text-white"
               >
                 {item.icon}
@@ -104,9 +106,9 @@ const Footer = () => {
           <ul className="mt-5 space-y-3 text-sm text-slate-200/80">
             {quickLinks.map((link) => (
               <li key={link.name}>
-                <a href={link.href} className="transition hover:text-pink-400">
+                <Link to={link.to} className="transition hover:text-pink-400">
                   {link.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -119,9 +121,9 @@ const Footer = () => {
           <ul className="mt-5 space-y-3 text-sm text-slate-200/80">
             {infoLinks.map((link) => (
               <li key={link.name}>
-                <a href={link.href} className="transition hover:text-pink-400">
+                <Link to={link.to} className="transition hover:text-pink-400">
                   {link.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -163,7 +165,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom */}
-  <div className="mt-12 border-t border-pink-800 pt-6 text-center text-xs text-slate-400">
+  <div className="mt-12 border-t border-pink-800/70 pt-6 text-center text-[0.7rem] text-slate-400">
         © {new Date().getFullYear()} Tharu Bridal Studio — Designed with 💖 in Sri Lanka.
       </div>
     </footer>
