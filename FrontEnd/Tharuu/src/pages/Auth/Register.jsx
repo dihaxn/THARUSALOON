@@ -46,8 +46,14 @@ const Register = () => {
 
       if (result.success) {
         setSuccess(true);
+        const roleRedirects = {
+          'OWNER': '/dashboard/owner',
+          'STAFF': '/dashboard/staff',
+          'CUSTOMER': '/dashboard/customer'
+        };
+        const redirectTo = roleRedirects[result.user.role] || '/';
         setTimeout(() => {
-          navigate('/', { replace: true });
+          navigate(redirectTo, { replace: true });
         }, 2000);
       }
     } catch (error) {
@@ -59,7 +65,12 @@ const Register = () => {
   };
 
   if (user) {
-    return <Navigate to="/" replace />;
+    const roleRedirects = {
+      'OWNER': '/dashboard/owner',
+      'STAFF': '/dashboard/staff',
+      'CUSTOMER': '/dashboard/customer'
+    };
+    return <Navigate to={roleRedirects[user.role] || '/'} replace />;
   }
 
   return (

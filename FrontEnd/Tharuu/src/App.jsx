@@ -9,7 +9,7 @@ import Home from './pages/Home/Home.jsx';
 import Login from './pages/Auth/Login.jsx';
 import Register from './pages/Auth/Register.jsx';
 import ServiceList from './pages/Service/ServiceList.jsx';
-import BookingList from './pages/Booking/BookingList.jsx';
+import BookingPage from './pages/Booking/BookingPage.jsx';
 import Gallery from './pages/Gallery/Gallery.jsx';
 import Contact from './pages/Contact/Contact.jsx';
 import OwnerDashboard from './pages/Dashboard/OwnerDashboard.jsx';
@@ -39,7 +39,7 @@ export default function App() {
               path="/bookings"
               element={
                 <ProtectedRoute roles={['CUSTOMER', 'STAFF', 'OWNER']}>
-                  <BookingList />
+                  <BookingPage />
                 </ProtectedRoute>
               }
             />
