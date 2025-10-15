@@ -18,8 +18,7 @@ const Register = () => {
     email: '',
     password: '',
     confirmPassword: '',
-    acceptTerms: false,
-    role: 'CUSTOMER'
+    acceptTerms: false
   };
 
   const validationSchema = Yup.object().shape({
@@ -27,8 +26,7 @@ const Register = () => {
     email: Yup.string().email('Invalid email address').required('Email is required'),
     password: Yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
     confirmPassword: Yup.string().oneOf([Yup.ref('password')], 'Passwords must match').required('Password confirmation is required'),
-    acceptTerms: Yup.boolean().oneOf([true], 'You must accept the terms'),
-    role: Yup.string().required('Role is required')
+    acceptTerms: Yup.boolean().oneOf([true], 'You must accept the terms')
   });
 
   const handleRegister = async (values, { setSubmitting }) => {
@@ -41,19 +39,20 @@ const Register = () => {
         name: values.name,
         email: values.email,
         password: values.password,
-        role: values.role
+        role: 'CUSTOMER' // Only customers can register
       });
 
       if (result.success) {
         setSuccess(true);
+        // Redirect based on user role
         const roleRedirects = {
           'OWNER': '/dashboard/owner',
           'STAFF': '/dashboard/staff',
           'CUSTOMER': '/dashboard/customer'
         };
-        const redirectTo = roleRedirects[result.user.role] || '/';
+
         setTimeout(() => {
-          navigate(redirectTo, { replace: true });
+          navigate(roleRedirects[result.user.role] || '/home', { replace: true });
         }, 2000);
       }
     } catch (error) {
@@ -64,13 +63,14 @@ const Register = () => {
     }
   };
 
+  // Redirect if already logged in
   if (user) {
     const roleRedirects = {
       'OWNER': '/dashboard/owner',
       'STAFF': '/dashboard/staff',
       'CUSTOMER': '/dashboard/customer'
     };
-    return <Navigate to={roleRedirects[user.role] || '/'} replace />;
+    return <Navigate to={roleRedirects[user.role] || '/home'} replace />;
   }
 
   return (
@@ -158,25 +158,6 @@ const Register = () => {
                       }`}
                     />
                     <ErrorMessage name="confirmPassword" component="div" className="mt-2 text-xs font-medium text-red-500" />
-                  </div>
-
-                  <div>
-                    <label htmlFor="role" className="mb-2 block text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
-                      Role
-                    </label>
-                    <Field
-                      as="select"
-                      name="role"
-                      id="role"
-                      className={`w-full rounded-xl border px-4 py-3 text-sm shadow-sm transition focus:border-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-100 ${
-                        errors.role && touched.role ? 'border-red-400' : 'border-slate-200'
-                      }`}
-                    >
-                      <option value="CUSTOMER">Customer</option>
-                      <option value="STAFF">Staff</option>
-                      <option value="OWNER">Owner</option>
-                    </Field>
-                    <ErrorMessage name="role" component="div" className="mt-2 text-xs font-medium text-red-500" />
                   </div>
 
                   <div className="flex items-start gap-3">

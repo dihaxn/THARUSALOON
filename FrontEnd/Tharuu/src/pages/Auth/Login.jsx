@@ -34,12 +34,15 @@ const Login = () => {
       });
 
       if (result.success) {
+        // Redirect based on intended destination or user role
+        const from = location.state?.from?.pathname;
         const roleRedirects = {
           'OWNER': '/dashboard/owner',
           'STAFF': '/dashboard/staff',
           'CUSTOMER': '/dashboard/customer'
         };
-        const redirectTo = roleRedirects[result.user.role] || '/';
+
+        const redirectTo = from || roleRedirects[result.user.role] || '/home';
         navigate(redirectTo, { replace: true });
       }
     } catch (error) {
@@ -50,13 +53,14 @@ const Login = () => {
     }
   };
 
+  // Redirect if already logged in
   if (user) {
     const roleRedirects = {
       'OWNER': '/dashboard/owner',
       'STAFF': '/dashboard/staff',
       'CUSTOMER': '/dashboard/customer'
     };
-    return <Navigate to={roleRedirects[user.role] || '/'} replace />;
+    return <Navigate to={roleRedirects[user.role] || '/home'} replace />;
   }
 
   return (
