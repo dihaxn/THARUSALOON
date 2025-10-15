@@ -121,6 +121,40 @@ export async function fetchBookings({ limit = 10, signal, timeout, token } = {})
   }
 }
 
+export async function createBooking(bookingData, token, { signal, timeout } = {}) {
+  const baseUrl = getApiBaseUrl();
+  const url = `${baseUrl}/api/bookings`;
+  const data = await fetchWithAuth(url, token, {
+    method: 'POST',
+    body: JSON.stringify(bookingData),
+    signal,
+    timeout
+  });
+  return data;
+}
+
+export async function updateBooking(id, bookingData, token, { signal, timeout } = {}) {
+  const baseUrl = getApiBaseUrl();
+  const url = `${baseUrl}/api/bookings/${id}`;
+  const data = await fetchWithAuth(url, token, {
+    method: 'PUT',
+    body: JSON.stringify(bookingData),
+    signal,
+    timeout
+  });
+  return data;
+}
+
+export async function deleteBooking(id, token, { signal, timeout } = {}) {
+  const baseUrl = getApiBaseUrl();
+  const url = `${baseUrl}/api/bookings/${id}`;
+  await fetchWithAuth(url, token, {
+    method: 'DELETE',
+    signal,
+    timeout
+  });
+}
+
 // Services API functions
 export async function getServices({ signal, timeout } = {}) {
   const baseUrl = getApiBaseUrl();

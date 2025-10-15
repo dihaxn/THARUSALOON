@@ -1,17 +1,13 @@
 package com.tharu.salon.controller;
 
-import com.tharu.salon.dto.BookingResponse;
+import com.tharu.salon.domain.Booking;
+import com.tharu.salon.dto.BookingDTO;
 import com.tharu.salon.service.BookingService;
-import java.time.LocalDate;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/bookings")
@@ -23,31 +19,38 @@ public class BookingController {
         this.bookingService = bookingService;
     }
 
+    @PostMapping
+    @PreAuthorize("hasAnyRole('CUSTOMER', 'STAFF', 'OWNER')")
+    public ResponseEntity<Booking> createBooking(@RequestBody BookingDTO bookingDTO) {
+        Booking booking = bookingService.createBooking(bookingDTO);
+        return ResponseEntity.ok(booking);
+    }
+
     @GetMapping
-    public ResponseEntity<Map<String, Object>> listBookings(
-            @RequestParam(name = "limit", defaultValue = "10") int limit,
-            @RequestParam(name = "start", required = false)
-            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate start,
-            @RequestParam(name = "end", required = false)
-            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate end
-    ) {
-        List<BookingResponse> bookings;
+    @PreAuthorize("hasAnyRole('STAFF', 'OWNER')")
+    public ResponseEntity<List<Booking>> getAllBookings() {
+        List<Booking> bookings = bookingService.getAllBookings();
+        return ResponseEntity.ok(bookings);
+    }
 
-        if (start != null && end != null) {
-            bookings = bookingService.listBetween(start, end)
-                    .stream()
-                    .map(BookingResponse::fromEntity)
-                    .collect(Collectors.toList());
-        } else {
-            bookings = bookingService.listUpcoming(limit)
-                    .stream()
-                    .map(BookingResponse::fromEntity)
-                    .collect(Collectors.toList());
-        }
+    @GetMapping("/{id}")
+    @PreAuthorize("hasAnyRole('STAFF', 'OWNER', 'CUSTOMER')")
+    public ResponseEntity<Booking> getBookingById(@PathVariable Long id) {
+        Booking booking = bookingService.getBookingById(id);
+        return ResponseEntity.ok(booking);
+    }
 
-        return ResponseEntity.ok(Map.of(
-                "count", bookings.size(),
-                "data", bookings
-        ));
+    @PutMapping("/{id}")
+    @PreAuthorize("hasAnyRole('STAFF', 'OWNER')")
+    public ResponseEntity<Booking> updateBooking(@PathVariable Long id, @RequestBody BookingDTO bookingDTO) {
+        Booking booking = bookingService.updateBooking(id, bookingDTO);
+        return ResponseEntity.ok(booking);
+    }
+
+    @DeleteMapping("/{id}")
+    @PreAuthorize("hasAnyRole('STAFF', 'OWNER')")
+    public ResponseEntity<Void> deleteBooking(@PathVariable Long id) {
+        bookingService.deleteBooking(id);
+        return ResponseEntity.noContent().build();
     }
 }

@@ -28,23 +28,13 @@ const Login = () => {
       setLoading(true);
       setError('');
       
-      const result = await login({
+      await login({
         email: values.email,
         password: values.password
       });
 
-      if (result.success) {
-        // Redirect based on intended destination or user role
-        const from = location.state?.from?.pathname;
-        const roleRedirects = {
-          'OWNER': '/dashboard/owner',
-          'STAFF': '/dashboard/staff',
-          'CUSTOMER': '/dashboard/customer'
-        };
-        
-        const redirectTo = from || roleRedirects[result.user.role] || '/home';
-        navigate(redirectTo, { replace: true });
-      }
+      const from = location.state?.from?.pathname || '/';
+      navigate(from, { replace: true });
     } catch (error) {
       setError(error.message || 'Login failed. Please try again.');
     } finally {
@@ -53,14 +43,8 @@ const Login = () => {
     }
   };
 
-  // Redirect if already logged in
   if (user) {
-    const roleRedirects = {
-      'OWNER': '/dashboard/owner',
-      'STAFF': '/dashboard/staff',
-      'CUSTOMER': '/dashboard/customer'
-    };
-    return <Navigate to={roleRedirects[user.role] || '/home'} replace />;
+    return <Navigate to="/" replace />;
   }
 
   return (
