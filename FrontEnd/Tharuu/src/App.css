@@ -22,7 +22,7 @@ html {
   /* Firefox */
   scrollbar-width: thin; /* thin | auto | none */
   scrollbar-color: #ec4899 #fde7f1; /* thumb | track */
-  scrollbar-gutter: stable both-edges;
+  scrollbar-gutter: stable;
 }
 
 /* Chrome, Edge, Safari */
